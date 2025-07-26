@@ -1,0 +1,35 @@
+
+:root {
+  --primary-color: #0A6CD5;
+  --secondary-color: #42B1FB;
+  --three-color: #BCDDFC;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --background-color: #557899;
+
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  scroll-behavior: smooth;
+
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+	background-color: #cfcfcf;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 20px;
+	background-color: #cccccc;
+}
+
+
