@@ -8,7 +8,7 @@ interface ChildComponentProps {
 }
 
 const NavBar: React.FC<ChildComponentProps> = ({isExpand}) => {
-    const [isSearchbarOpen, setIsSearchbarOpen] = useState<boolean>(false);
+    
     
     useEffect(() => {
         console.log(isExpand)
@@ -29,7 +29,7 @@ const NavBar: React.FC<ChildComponentProps> = ({isExpand}) => {
                         name='Search'
                         value="search"
                         placeholder={`Search`} id="" 
-                        onClick={() => setIsSearchbarOpen(true)}
+                        // onClick={() => setIsSearchbarOpen(true)}
                     />
                 </div>
                 <div className='flex items-center gap-6'>
