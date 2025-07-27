@@ -1,13 +1,17 @@
 
 
-import { ChevronRight, Circle, CircleCheckBig } from "lucide-react";
+import { ChevronRight, Circle, CircleCheck, CircleCheckBig } from "lucide-react";
 import { useEffect, useState } from "react";
 import SidebarItem  from "./sectionBarItems";
 import { sections } from "./sidebardata";
 import { path } from "framer-motion/m";
+import { AnimatePresence, motion } from "framer-motion";
 
+interface ChildComponentProps {
+    isExpand: (data: boolean) => void; // Define the type of the callback prop
+}
 
-export default function Sidebar() {
+const Sidebar: React.FC<ChildComponentProps> = ({ isExpand }) => {
     const [activePath, setActivePath] = useState<string | null>("Dashboards/CRM");
     const [expandedSection, setExpandedSection] = useState<string | null>("Dashboards");    
     const [activeExpandedSection, setActiveExpandedSection] = useState<string | string[] | null>(["Dashboards"]);    
@@ -58,53 +62,63 @@ export default function Sidebar() {
         setIsExpanded(isCheckedExpand)
     }, [isCheckedExpand])
     
+    useEffect(() => {
+        isExpand(isExpanded)
+    }, [isExpanded])
+    
     return (
-        <aside 
-            className={`
-                sidebar fixed md:static z-40 h-[100vh] font-semibold text-black pb-4 transform-all duration-300 bg-white shadow-xl rounded-md overflow-y-scroll
-                ${isExpanded ? "w-[275px]" : "w-[55px]"} 
-            `}
-            onMouseEnter={() => !isCheckedExpand && setIsExpanded(true)}
-            onMouseLeave={() => !isCheckedExpand && setIsExpanded(false)}
-        >
-            <div className={`
-                mb-4 bg-[#ffffff] flex justify-between items-center sticky top-0 left-0
-                ${isExpanded ? "p-4": "p-2"}
-            `}>
-                <div className="flex gap-2 items-center">
-                    <img 
-                        className="w-8 rounded-full" 
-                        src="/images/logos/23133a5c97d74294b2e62ac8a2209466-free.png" 
-                        alt="FlashTime Logo" 
-                    />
-                    {isExpanded && <h1 className="text-xl font-bold">FLASHTIME</h1>}
+        <AnimatePresence>
+            <motion.aside 
+                animate={{width: isExpanded ? "20%" : "5%"}}
+                transition={{duration: 0.2, ease: "easeInOut"}}
+                className={`
+                    sidebar fixed left-0 top-0 md:static z-40 h-[100vh] font-semibold text-black pb-4 bg-white shadow-xl rounded-md overflow-y-scroll
+                    `}
+                    onMouseEnter={() => !isCheckedExpand && setIsExpanded(true)}
+                    onMouseLeave={() => !isCheckedExpand && setIsExpanded(false)}
+                    >
+                <div className={`
+                    mb-4 bg-[#ffffff] flex items-center sticky top-0 left-0
+                    ${isExpanded ? "p-4 justify-between": "p-2 justify-center"}
+                `}>
+                    <div className={`flex ${isExpanded ? 'gap-2' : ''} items-center`}>
+                        <img 
+                            className="w-8 rounded-full" 
+                            src="/images/logos/23133a5c97d74294b2e62ac8a2209466-free.png" 
+                            alt="FlashTime Logo" 
+                        />
+                        {isExpanded && <h1 className="text-lg font-bold">FLASHTIME</h1>}
+                    </div>
+
+                    {isCheckedExpand  
+                        ?   <CircleCheck className={`transition-all duration-200 cursor-pointer hover:scale-2`} onClick={() => setIsCheckedExpand(!isCheckedExpand)}/>
+                        : isExpanded 
+                        &&  <Circle className={`transition-all duration-200 cursor-pointer hover:scale-2`} onClick={() => setIsCheckedExpand(!isCheckedExpand)}/>
+                    }
                 </div>
 
-                {isCheckedExpand  
-                    ?   <CircleCheckBig className={`transition-all duration-200 cursor-pointer hover:scale-2`} onClick={() => setIsCheckedExpand(!isCheckedExpand)}/>
-                    : isExpanded 
-                        &&  <Circle className={`transition-all duration-200 cursor-pointer hover:scale-2`} onClick={() => setIsCheckedExpand(!isCheckedExpand)}/>
-                }
-            </div>
-
-            <nav className={`h-[100%] pt-0 ${isExpanded ? "p-4" : "p-2"} space-y-1 transition-[max-height] duration-300 `}>
-                {sections.map((item) => (
-                <SidebarItem
-                    key={item.name}
-                    item={item}
-                    path={[item.name]}
-                    activePath={activePath}
-                    setActivePath={setActivePath}
-                    toggleSection={toggleSection}
-                    openSections={openSections}
-                    setOpenSections={setOpenSections}
-                    activeExpandedSection={activeExpandedSection}
-                    setActiveExpandedSection={setActiveExpandedSection}
-                    isExpanded={isExpanded}
-                    isCheckedExpand={isCheckedExpand}
-                />
-                ))}
-            </nav>
-        </aside>
+                <nav className={`h-[100%] pt-0 ${isExpanded ? "p-4" : "p-2"} space-y-1 transition-[max-height] duration-300 `}>
+                    {sections.map((item) => (
+                        <SidebarItem
+                        key={item.name}
+                        item={item}
+                        path={[item.name]}
+                        activePath={activePath}
+                        setActivePath={setActivePath}
+                        toggleSection={toggleSection}
+                        openSections={openSections}
+                        setOpenSections={setOpenSections}
+                        activeExpandedSection={activeExpandedSection}
+                        setActiveExpandedSection={setActiveExpandedSection}
+                        isExpanded={isExpanded}
+                        isCheckedExpand={isCheckedExpand}
+                        />
+                    ))}
+                </nav>
+            </motion.aside>
+        </AnimatePresence>
     );
 }
+
+
+export default Sidebar
