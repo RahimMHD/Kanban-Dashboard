@@ -17,9 +17,9 @@ const NavBar: React.FC<ChildComponentProps> = ({isExpand}) => {
     return (
         <AnimatePresence>
             <motion.div
-                animate={{width: isExpand ? "76%" : "92%"}}
+                
                 transition={{duration: 0.2, ease: "easeInOut"}}
-                className={`navbar h-12 bg-white p-4 rounded-b-xl flex justify-between items-center`}
+                className={`navbar w-[100%] h-12 bg-white p-4 rounded-b-xl flex justify-between items-center`}
                 >
                 <div className='flex gap-4 items-center'>
                     <Search size={22}/>
