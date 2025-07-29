@@ -19,7 +19,7 @@ const NavBar: React.FC<ChildComponentProps> = ({isExpand}) => {
             <motion.div
                 
                 transition={{duration: 0.2, ease: "easeInOut"}}
-                className={`navbar w-[100%] h-12 bg-white p-4 rounded-b-xl flex justify-between items-center`}
+                className={`navbar mb-10 w-[100%] h-12 bg-white p-4 rounded-b-xl flex justify-between items-center`}
                 >
                 <div className='flex gap-4 items-center'>
                     <Search size={22}/>

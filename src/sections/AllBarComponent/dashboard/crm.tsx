@@ -4,68 +4,68 @@ import { BrickWallFireIcon, BriefcaseBusiness, Calendar, ChartPie, CheckCheck, C
 
 export default function Crm() {
     return (
-        <div className="grid grid-cols-8 gap-6">
+        <div className="grid grid-cols-12 gap-6">
             {/* <div className=""> */}
-                <div className="grid col-span-2 ">
-                    <div>
+                <div className="col-span-3 flex justify-between items-center gap-3 overflow-hidden overflow-t-visible bg-black text-white p-3 relative">
+                    <div className="">
+                        <img 
+                            src="../../../../public/images/illustrations/characters/vecteezy_3d-male-character-thinking-and-working-on-a-laptop_24785804.png" 
+                            className="absolute w-[200px] top-4 right-28" 
+                            alt="" 
+                        />
+                    </div>
+                    <div className="">
                         <h3>Ratings</h3>
-                        <div>
-                            <h3>13K</h3>
-                            <p>+15.6%</p>
+                        <div className="flex gap-3 my-4 items-baseline">
+                            <h3 className="text-xl font-bold">13K</h3>
+                            <p className="text-green-500 font-semibold">+15.6%</p>
                         </div>
-                        <p>Year of 2025</p>
+                        <p className="text-blue-600 bg-blue-400 p-2 rounded-lg">Year of 2025</p>
+                    </div>
+                </div>
+
+                <div className="col-span-3 bg-white flex justify-between items-center gap-3 overflow-hidden overflow-t-visible bg-black text-white p-3 relative">
+                    <div>
+                        <h3>Sessions</h3>
+                        <div className="flex gap-3 my-4 items-baseline">
+                            <h3 className="text-xl font-bold">24.5K</h3>
+                            <p className="text-red-500 font-semibold">-20%</p>
+                        </div>
+                        <p className="text-white bg-gray-400/50 p-2 rounded-lg">Year of 2025</p>
                     </div>
                     <div>
                         <img 
-                            src="../../../../public/images/illustrations/characters/5.png" 
-                            className="w-12" 
+                            src="../../../../public/images/illustrations/characters/vecteezy_stunning-artistic-businesswoman-silhouette-with-tablet-genuine_57897171.png" 
+                            className="absolute w-[200px] top-4 left-28" 
                             alt="" 
                         />
                     </div>
                 </div>
 
-                <div className="col-span-2">
-                    <div>
-                        <h3>Ratings</h3>
-                        <div>
-                            <h3>13K</h3>
-                            <p>+15.6%</p>
-                        </div>
-                        <p>Year of 2025</p>
-                    </div>
-                    <div>
-                        <img 
-                            src="../../../../public/images/illustrations/characters/5.png" 
-                            className="w-12" 
-                            alt="" 
-                        />
-                    </div>
-                </div>
-
-                <div className="col-span-4">
-                    <EllipsisVertical size={16} />
-                    <h3>Transactions</h3>
-                    <p>Total 48.5% Growth  this month</p>
-                    <div>
-                        <div>
-                            <ChartPie size={16} />
+                <div className="col-span-6 bg-white p-4">
+                    <EllipsisVertical size={16} className="absolute top-0 right-6"/>
+                    <h3 className="font-semibold text-xl">Transactions</h3>
+                    <p className="font-semibold">Total 48.5% Growth  this month</p>
+                    <div className="flex justify-between gap-6">
+                        <div className="flex gap-4 items-center">
+                            <ChartPie size={16} className="bg-blue-500 p-2" />
                             <div>
-                                <p>Sales</p>
-                                <p>245K</p>
+                                <p className="font-semibold">Sales</p>
+                                <p className="font-semibold text-xl">245K</p>
                             </div>
                         </div>
-                        <div>
-                            <ChartPie size={16} />
-                            <div>
-                                <p>Sales</p>
-                                <p>245K</p>
+                        <div className="flex items-center gap-4">
+                            <ChartPie size={16} className="bg-green-500 p-2"/>
+                            <div className="">
+                                <p className="font-semibold">Sales</p>
+                                <p className="text-xl font-semibold">245K</p>
                             </div>
                         </div>
-                        <div>
-                            <ChartPie size={16} />
-                            <div>
-                                <p>Sales</p>
-                                <p>245K</p>
+                        <div className="flex items-center gap-4">
+                            <ChartPie size={16} className="bg-yellow-500 w-"/>
+                            <div className="">
+                                <p className="font-semibold">Sales</p>
+                                <p className="text-xl font-semibold">245K</p>
                             </div>
                         </div>
                     </div>
@@ -73,18 +73,18 @@ export default function Crm() {
             {/* </div> */}
 
             {/* <div> */}
-                <div className="2">
+                <div className="col-span-3 bg-white">
                     <EllipsisVertical size={16} />
                     <h3>Total Sales</h3>
                     <p>$21.845</p>
                 </div>
 
-                <div className="col-span-2">
+                <div className="col-span-3 bg-white">
                     <EllipsisVertical size={16} />
                     <h3>Revenue Report</h3>
                 </div>
 
-                <div className="col-span-4">
+                <div className="col-span-6 bg-white">
                     <EllipsisVertical size={16} />
                     <h3>Sales Overview</h3>
                     <div>
@@ -132,7 +132,7 @@ export default function Crm() {
             {/* </div> */}
 
             {/* <div> */}
-                <div className="col-span-4">
+                <div className="col-span-5 bg-white">
                     <h3>Activity Timeline</h3>
                     <ul>
                         <li>
@@ -167,7 +167,7 @@ export default function Crm() {
                         </li>
                     </ul>
                 </div>
-                <div className="col-span-3">
+                <div className="col-span-4 bg-white">
                     <EllipsisVertical size={16} />
                     <h3>Weekly Sales</h3>
                     <p>Total 85.4k Sales</p>
@@ -190,14 +190,14 @@ export default function Crm() {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-1">
-                    <div>
+                <div className="grid col-span-3 grid-col gap-4">
+                    <div className="bg-white gap-4 p-3 rounded-sm">
                         <h3>42.5k</h3>
                         <div>
                         </div>
                         <p>Total Growth</p>
                     </div>
-                    <div>
+                    <div className="bg-white gap-4 p-3 rounded-sm">
                         <EllipsisVertical size={16} />
                         <FileBarChart size={16} />
                         <p>New Project</p>
@@ -211,7 +211,7 @@ export default function Crm() {
             {/* </div> */}
 
             {/* <div> */}
-                <div className="col-span-3">
+                <div className="col-span-4 bg-white">
                     <EllipsisVertical size={16} />
                     <h3>Upgrade Plan</h3>
                     <p>Please make the payment to start enjoying all the features of our premium plan as soon as possible.</p>
@@ -261,7 +261,7 @@ export default function Crm() {
                     <input type="submit" value="Contact Now" />
                 </div>
 
-                <div className="col-span-3">
+                <div className="col-span-4 bg-white">
                     <EllipsisVertical size={16} />
                     <h3>Meeting Schedule</h3>
                     <div>
@@ -280,7 +280,7 @@ export default function Crm() {
                     </div>
                 </div>
 
-                <div className="col-span-2">
+                <div className="col-span-4 bg-white">
                     <img src="" alt="" />
 
                     <div>
