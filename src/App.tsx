@@ -6,6 +6,7 @@ import NavBar from './sections/AllBarComponent/nav-bar/navBar';
 import SearchBar from './sections/AllBarComponent/nav-bar/searchBar';
 import { motion } from 'framer-motion';
 import Footer from './sections/Footer';
+import Crm from './sections/AllBarComponent/dashboard/crm';
 
 
 const App: React.FC = () => {
@@ -22,11 +23,12 @@ const App: React.FC = () => {
       <motion.div
                 animate={{width: isExpanded ? "76%" : "92%"}}
                 transition={{duration: 0.2, ease: "easeInOut"}}
-                className={`flex flex-column relative`}
+                className={`flex flex-col relative`}
       >
         <NavBar isExpand={isExpanded} />
-      
         <SearchBar />
+        <Crm />
+      
         <Footer />
       </motion.div>
     

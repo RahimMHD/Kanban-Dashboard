@@ -3,7 +3,7 @@ import { Heart } from 'lucide-react'
 
 function Footer() {
     return (
-        <footer className='w-[100%] text-md font-semibold absolute bottom-0 left-0 h-10 text-white flex justify-between items-center'>
+        <footer className='w-[100%] mt-8 text-md font-semibold h-10 text-white flex justify-between items-center'>
             <div className={`flex items-center gap-1 `}>
                 @ 2025 Made With  
                 <Heart size={12} className='text-red-600'/> By 
