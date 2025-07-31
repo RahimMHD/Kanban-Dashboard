@@ -69,7 +69,7 @@ const Sidebar: React.FC<ChildComponentProps> = ({ isExpand }) => {
     return (
         <AnimatePresence>
             <motion.aside 
-                animate={{width: isExpanded ? "20%" : "5%"}}
+                animate={{width: isExpanded ? "18%" : "5%"}}
                 transition={{duration: 0.2, ease: "easeInOut"}}
                 className={`
                     sidebar fixed left-0 top-0 md:static z-40 h-[100vh] font-semibold text-black pb-4 bg-white shadow-xl rounded-md overflow-y-scroll

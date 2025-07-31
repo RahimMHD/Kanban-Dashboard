@@ -17,11 +17,11 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className='app flex w-[100%] gap-8 overflow-y-auto'>
+    <div className='app flex w-[100%] gap-5 overflow-y-auto'>
       <SideBar isExpand={handleDataFromChild} />
 
       <motion.div
-                animate={{width: isExpanded ? "76%" : "92%"}}
+                animate={{width: isExpanded ? "79.6%" : "92%"}}
                 transition={{duration: 0.2, ease: "easeInOut"}}
                 className={`flex flex-col relative`}
       >
