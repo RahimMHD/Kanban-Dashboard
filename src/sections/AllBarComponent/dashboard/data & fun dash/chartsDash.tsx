@@ -40,7 +40,7 @@ const data = [
     },
 ];
 
-export default function LineChartSales() {
+function LineChartSales() {
     return (
         <ResponsiveContainer width="100%" height="90%">
             <LineChart
@@ -62,3 +62,27 @@ export default function LineChartSales() {
     );
 }
 
+
+function SmallLineChartSales() {
+    return (
+        <ResponsiveContainer width="100%" height="90%">
+            <LineChart 
+                width={500}
+                height={300}
+                data={data}
+                margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                }}
+            >
+                <Tooltip />
+                
+                <Line type="monotone" dataKey="pv" stroke="#71c91e" strokeWidth={5} activeDot={{ r: 8 }} />
+            </LineChart>
+        </ResponsiveContainer>
+    );
+}
+
+export {SmallLineChartSales, LineChartSales}
