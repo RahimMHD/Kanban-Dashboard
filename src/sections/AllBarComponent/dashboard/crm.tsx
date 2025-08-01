@@ -1,7 +1,7 @@
 
 import { BriefcaseBusiness, Calendar, ChartPie, CheckCheck, Clock, DollarSign, Ellipsis, EllipsisVertical, File, FileBarChart, Laptop, Map, Star, Users } from "lucide-react";
 import { MeetingSchedule } from "./data & fun dash/dashData";
-import LineChartSales from "./data & fun dash/chartsDash";
+import {LineChartSales, SmallLineChartSales } from "./data & fun dash/chartsDash";
 import BarChartWeeklySales from "./data & fun dash/barChartDah";
 
 export default function Crm() {
@@ -130,7 +130,7 @@ export default function Crm() {
             <div className="col-span-6 bg-white p-6 rounded-lg shadow-sm relative">
                 <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
                 {/* <div className="flex justify-between items-center mb-4"> */}
-                <h3 className="font-semibold text-lg mb-4">Activity Timeline</h3>
+                <h3 className="font-semibold text-lg mb-6">Activity Timeline</h3>
                 {/* </div> */}
                 <ul className="space-y-6">
                     <li className="relative pl-6 border-l-2 border-gray-200">
@@ -179,10 +179,10 @@ export default function Crm() {
                 <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
                 <h3 className="font-semibold text-lg mb-1">Weekly Sales</h3>
                 <p className="text-gray-500 text-sm mb-4">Total 85.4k Sales</p>
-                <div className="h-[70%] mb-1 flex items-center justify-center">
+                <div className="h-[64%] flex items-center justify-center">
                     <BarChartWeeklySales />
                 </div>
-                <div className="flex justify-around">
+                <div className="p-2 flex justify-around items-center">
                     <div className="flex gap-3 items-center">
                         <div className="bg-blue-100 p-3 rounded-lg">
                             <ChartPie size={22} className="text-blue-600" />
@@ -205,12 +205,12 @@ export default function Crm() {
             </div>
 
             <div className="col-span-2 space-y-4">
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 className="font-bold text-2xl mb-1">42.5k</h3>
-                    <div className="mb-1">
-                        <LineChartSales />
+                <div className="bg-white p-3 rounded-lg shadow-sm">
+                    <p className="font-semibold text-xl">42.5k</p>
+                    <div className="h-28 flex items-center justify-center">
+                        <SmallLineChartSales />
                     </div>
-                    <p className="text-gray-500 text-sm">Total Growth</p>
+                    <p className="text-center">Total Growth</p>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm relative">
                     <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
@@ -307,7 +307,7 @@ export default function Crm() {
                 
                 <div className="space-y-4">
                     {MeetingSchedule && MeetingSchedule.map((item, index) => (
-                        <div className="flex justify-between items-center p-1">
+                        <div key={index} className="flex justify-between items-center p-1">
                             <div className="flex gap-3 items-center">
                                 <img 
                                     src={item.image} 

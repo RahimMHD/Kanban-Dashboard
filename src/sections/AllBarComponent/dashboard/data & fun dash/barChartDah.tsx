@@ -53,8 +53,6 @@ export default function BarChartWeeklySales() {
         return [a.uv] 
     })
 
-    console.log(checkTheBig)
-
     return (
     <ResponsiveContainer width="100%" height="100%">
         <BarChart width={100} height={300} data={dataBar}>
