@@ -1,30 +1,45 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowBigDown, ArrowBigUp, Bell, Languages, LaptopMinimal, Search, StarsIcon } from 'lucide-react'
+import { AlignJustify, AlignLeft, ArrowBigDown, ArrowBigUp, Bell, Languages, LaptopMinimal, Search, StarsIcon } from 'lucide-react'
 import { useEffect, useState } from 'react';
 
 interface ChildComponentProps {
     isExpand: boolean; // Define the type of the callback prop
+    isResize: boolean; // Define the type of the callback prop
 }
 
-const NavBar: React.FC<ChildComponentProps> = ({isExpand}) => {
-    
-    
-    useEffect(() => {
-        console.log(isExpand)
-    }, [isExpand])
+const NavBar: React.FC<ChildComponentProps> = ({isExpand, isResize}) => {
+    const [isScrolling, setIsScrolling] = useState<boolean>(false)
+    const [isShowHide, setIsShowHide] = useState<boolean>(isResize)
+
+    window.addEventListener("scroll", () => {
+        // console.log(window.scrollY);
+        if (window.scrollY >= 1) {
+            setIsScrolling(true)
+        } else {
+            setIsScrolling(false);
+        }
+    })
 
     return (
         <AnimatePresence>
-            <motion.div
-                
+            <motion.header    
                 transition={{duration: 0.2, ease: "easeInOut"}}
-                className={`navbar mb-10 w-[100%] h-12 bg-white p-4 rounded-b-xl flex justify-between items-center`}
-                >
+                className={`navbar ${isScrolling ? 'sticky bg-white top-0 right-0 px-8 z-20' : ""}
+                    mb-10  h-12 p-4 flex justify-between items-center transition-all duration-300
+                `}
+            >
+
                 <div className='flex gap-4 items-center'>
+                    {isResize 
+                        && <AlignJustify 
+                            size={22} 
+                            onClick={() => setIsShowHide(true)}
+                            className='hover:text-blue-500 cursor-pointer'
+                        />}
                     <Search size={22}/>
                     <input 
-                        className='bg-white cursor-pointer focus:outline-0' 
+                        className='bg-transparent cursor-pointer focus:outline-0' 
                         type="button" 
                         name='Search'
                         value="search"
@@ -45,7 +60,7 @@ const NavBar: React.FC<ChildComponentProps> = ({isExpand}) => {
                         <span className='w-2 h-2 rounded-full bg-green-600 absolute bottom-0 right-0'></span>
                     </div>
                 </div>
-            </motion.div>
+            </motion.header>
         </AnimatePresence>
     )
 }
