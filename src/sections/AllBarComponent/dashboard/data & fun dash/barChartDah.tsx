@@ -1,6 +1,6 @@
 
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { BarChart, Bar } from 'recharts';
+import React, { PureComponent } from 'react';
+import {XAxis,YAxis, Pie, PieChart, BarChart, Bar, ResponsiveContainer, Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis, } from 'recharts';
 
 const dataBar: any[] = [
     {
@@ -47,7 +47,7 @@ const dataBar: any[] = [
     },
 ];
 
-export default function BarChartWeeklySales() {
+function BarChartWeeklySales() {
 
     const checkTheBig = dataBar.filter(a => {
         return [a.uv] 
@@ -62,3 +62,93 @@ export default function BarChartWeeklySales() {
     </ResponsiveContainer>
     );
 }
+
+
+// circle chart 
+
+const data01 = [
+    { name: 'Group A', value: 400 },
+    { name: 'Group B', value: 300 },
+    { name: 'Group C', value: 300 },
+    { name: 'Group D', value: 200 },
+];
+
+
+function CircleChartSales() {
+    return (
+        <ResponsiveContainer width="80%" height="80%">
+            <PieChart width={200} height={200}>
+                <Pie data={data01} dataKey="value" cx="50%" cy="50%" innerRadius={20} outerRadius={50} fill="#42B1FB" label />
+            </PieChart>
+        </ResponsiveContainer>
+    );
+}
+
+
+
+
+
+
+const dataRadar = [
+    {
+        subject: 'Sunday',
+        A: 120,
+        B: 110,
+        fullMark: 150,
+    },
+    {
+        subject: 'Monday',
+        A: 98,
+        B: 130,
+        fullMark: 150,
+    },
+    {
+        subject: 'Tuesday',
+        A: 86,
+        B: 130,
+        fullMark: 150,
+    },
+    {
+        subject: 'Wednesday',
+        A: 99,
+        B: 100,
+        fullMark: 150,
+    },
+    {
+        subject: 'Thursday',
+        A: 85,
+        B: 90,
+        fullMark: 150,
+    },
+    {
+        subject: 'Friday',
+        A: 65,
+        B: 85,
+        fullMark: 150,
+    },
+];
+
+function RadarChartSales () {
+
+
+    return (
+        <ResponsiveContainer width="100%" height="100%">
+            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={dataRadar}>
+            <PolarGrid />
+            <PolarAngleAxis dataKey="subject" />
+            <PolarRadiusAxis angle={30} domain={[0, 150]} />
+            <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+            <Radar name="Lily" dataKey="B" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.6} />
+            <Legend  />
+            </RadarChart>
+        </ResponsiveContainer>
+    );
+    
+}
+
+
+
+
+
+
+export {BarChartWeeklySales, CircleChartSales, RadarChartSales}

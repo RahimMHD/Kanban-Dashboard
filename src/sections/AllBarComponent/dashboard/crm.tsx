@@ -1,13 +1,20 @@
 
-import { BriefcaseBusiness, Calendar, ChartPie, CheckCheck, Clock, DollarSign, Ellipsis, EllipsisVertical, File, FileBarChart, Laptop, Map, Star, Users } from "lucide-react";
+import { BriefcaseBusiness, Calendar, ChartPie, CheckCheck, CircleSmall, Clock, DollarSign, Ellipsis, EllipsisVertical, File, FileArchive, FileBarChart, Folder, FolderClosed, Laptop, Map, Star, Users } from "lucide-react";
 import { MeetingSchedule } from "./data & fun dash/dashData";
 import {LineChartSales, SmallLineChartSales } from "./data & fun dash/chartsDash";
-import BarChartWeeklySales from "./data & fun dash/barChartDah";
+import {BarChartWeeklySales, CircleChartSales, RadarChartSales} from "./data & fun dash/barChartDah";
+import { useState } from "react";
 
 export default function Crm() {
+    const [isScrolled, setIsScrolled] = useState<number>(0)
+    window.addEventListener("scroll", () => {
+        setIsScrolled(window.scrollY)
+        console.log(isScrolled)
+    })
+    
 
     return (
-        <div className="grid grid-cols-12 gap-5 text-start">
+        <div className={`grid grid-cols-12 gap-5 text-start z-10`}>
             {/* First Row */}
             <div className="col-span-3 flex justify-between items-start p-6 rounded-lg bg-gradient-to-r from-blue-600 to-blue-800 text-white relative overflow-hidden">
                 <div className="z-10">
@@ -86,41 +93,49 @@ export default function Crm() {
                 </div>
             </div>
 
-            <div className="col-span-3 bg-white p-6 rounded-lg shadow-sm relative">
+            <div className="col-span-3 bg-white p-6 pb-2 rounded-lg shadow-sm relative">
                 <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
-                <h3 className="font-semibold text-lg mb-4">Revenue Report</h3>
-                <div className="h-32 bg-gray-100 rounded-lg flex items-center justify-center">
-                    <p className="text-gray-400">Jan Feb Mar Apr May Jun</p>
+                <h3 className="font-semibold text-lg mb-9">Revenue Report</h3>
+                <div className="h-56 w-[100%]  flex items-center justify-center">
+                    <RadarChartSales />
                 </div>
             </div>
 
             <div className="col-span-6 bg-white p-6 rounded-lg shadow-sm relative">
                 <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
                 <h3 className="font-semibold text-lg mb-4">Sales Overview</h3>
-                <div>
-                    <div className="bg-blue-50 text-blue-800 px-4 py-2 rounded-lg mb-4">
-                        <strong>100k</strong> Weekly Sales
+                
+                <div className="flex gap-6">
+                    <div className="h-52 w-56">
+                        <CircleChartSales />
                     </div>
-                    <div className="space-y-3">
-                        <div className="flex justify-between items-center">
-                            <span className="text-gray-600">Number of Sales</span>
-                            <strong className="font-semibold">$86,400</strong>
+                    <div className="flex flex-col justify-center items-center">
+                        <div className="flex items-center gap-4 mb-6">
+                            <div className="p-3 flex justify-center items-center bg-blue-300/50">
+                                <FolderClosed size={26} className="text-blue-800"/>
+                            </div>
+                            <div >
+                                <h4>Number of Sales</h4>
+                                <h3>$86,400</h3>
+                            </div>
                         </div>
-                        <div className="flex justify-between items-center">
-                            <span className="text-gray-600">Apparel</span>
-                            <strong className="font-semibold">$12,150</strong>
-                        </div>
-                        <div className="flex justify-between items-center">
-                            <span className="text-gray-600">Electronics</span>
-                            <strong className="font-semibold">$24,900</strong>
-                        </div>
-                        <div className="flex justify-between items-center">
-                            <span className="text-gray-600">FMCG</span>
-                            <strong className="font-semibold">$12,750</strong>
-                        </div>
-                        <div className="flex justify-between items-center">
-                            <span className="text-gray-600">Other Sales</span>
-                            <strong className="font-semibold">$50,200</strong>
+                        <div className="w-72 grid grid-cols-2 items-center text-center">
+                            <ul className="w-[160px] mb-4">
+                                <li className="text-gray-600">Number of Sales</li>
+                                <strong className="text-lg font-bold">$86,400</strong>
+                            </ul>
+                            <ul className="w-[160px] mb-4">
+                                <li className="text-gray-600">Apparel</li>
+                                <strong className="text-lg font-bold">$12,150</strong>
+                            </ul>
+                            <ul className="w-[160px] mb-4">
+                                <li className="text-gray-600">Electronics</li>
+                                <strong className="text-lg font-bold">$24,900</strong>
+                            </ul>
+                            <ul className="w-[160px] mb-4">
+                                <li className="text-gray-600">FMCG</li>
+                                <strong className="text-lg font-bold">$12,750</strong>
+                            </ul>
                         </div>
                     </div>
                 </div>
