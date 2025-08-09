@@ -26,7 +26,7 @@ const NavBar: React.FC<ChildComponentProps> = ({isExpand, isResize}) => {
             <motion.header    
                 transition={{duration: 0.2, ease: "easeInOut"}}
                 className={`navbar ${isScrolling ? 'sticky bg-white top-0 right-0 px-8 z-20' : ""}
-                    mb-10  h-12 p-4 flex justify-between items-center transition-all duration-300
+                    mb-4  h-12 p-4 flex justify-between items-center transition-all duration-200
                 `}
             >
 

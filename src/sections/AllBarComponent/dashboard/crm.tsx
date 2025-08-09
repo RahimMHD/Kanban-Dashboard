@@ -230,8 +230,8 @@ export default function Crm() {
                 <div className="bg-white p-4 rounded-lg shadow-sm relative">
                     <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
                     <div className="flex flex-col justify-between items-start mb-4">
-                        <div className="bg-purple-300 p-2 mb-3 rounded-full">
-                            <FileBarChart size={28} className="text-purple-700" />
+                        <div className="bg-[#42b1fb5b] p-2 mb-3 rounded-full">
+                            <FileBarChart size={28} className="text-[#0A6CD5]" />
                         </div>
                         <div>
                             <p className="text-gray-500 text-md font-bold">New Project</p>
@@ -353,7 +353,7 @@ export default function Crm() {
                     />
                 </div>
                 <div className="flex gap-4 mb-4 p-4">
-                    <div className="w-28 h-18 bg-purple-100 text-purple-800 text-center px-4 py-4 rounded-lg">
+                    <div className="w-28 h-18 bg-[#42b1fb48] text-[#0A6CD5] text-center px-4 py-4 rounded-lg">
                         <p className="text-xL">Jan</p>
                         <p className="font-bold text-2xl">24</p>
                     </div>
