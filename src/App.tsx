@@ -38,7 +38,7 @@ const App: React.FC = () => {
 
       <motion.div
                 animate={{
-                  width: isResizing ? "100%" : isExpanded ? "79.6%" : "92%", 
+                  width: isResizing ? "100%" : isExpanded ? "81.6%" : "92%", 
                   justifyContent: isResizing ? "center" : ""
                 }}
                 transition={{duration: 0.2, ease: "easeInOut"}}
