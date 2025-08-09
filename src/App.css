@@ -1,18 +1,24 @@
 
 :root {
   --primary-color: #0A6CD5;
-  --secondary-color: #42B1FB;
+  --secondary-color: #42b1fb;
+  --secondary-Background-color: #42b1fb5b;
   --three-color: #BCDDFC;
   --text-color: rgba(255, 255, 255, 0.87);
   --background-color: #557899;
-
+  
+  --tools-color: #07c500;
+  --tools-color: #ee9004;
+  --tools-color: #5d36e7;
+  --tools-color: #f3341b;
+  --tools-color: #ffb400;
 }
 
 #root {
   max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
   scroll-behavior: smooth;
 
 }

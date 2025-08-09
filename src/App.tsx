@@ -7,6 +7,7 @@ import SearchBar from './sections/AllBarComponent/nav-bar/searchBar';
 import { motion } from 'framer-motion';
 import Footer from './sections/Footer';
 import Crm from './sections/AllBarComponent/dashboard/crm';
+import Analytics from './sections/AllBarComponent/dashboard/analytics';
 
 
 const App: React.FC = () => {
@@ -45,7 +46,7 @@ const App: React.FC = () => {
       >
         <NavBar isExpand={isExpanded} isResize={isResizing} />
         <SearchBar />
-        <Crm />
+        <Analytics />
       
         <Footer />
       </motion.div>
