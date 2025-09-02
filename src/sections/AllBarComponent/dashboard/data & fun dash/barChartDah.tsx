@@ -1,50 +1,15 @@
 
 import React, { PureComponent } from 'react';
-import {XAxis,YAxis,  RadialBarChart, RadialBar, Pie, PieChart, BarChart, Bar, ResponsiveContainer, Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis, } from 'recharts';
+import {XAxis,YAxis,  RadialBarChart, RadialBar, Pie, PieChart, BarChart, Bar, ResponsiveContainer, Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis, Tooltip, CartesianGrid, LineChart, Line, } from 'recharts';
 
 const dataBar: any[] = [
-    {
-        name: 'S',
-        uv: 1400,
-        pv: 2200,
-        amt: 2400,
-    },
-    {
-        name: 'M',
-        uv: 2000,
-        pv: 1398,
-        amt: 2210,
-    },
-    {
-        name: 'T',
-        uv: 1700,
-        pv: 9800,
-        amt: 2290,
-    },
-    {
-        name: 'W',
-        uv: 2180,
-        pv: 3908,
-        amt: 2000,
-    },
-    {
-        name: 'T',
-        uv: 3890,
-        pv: 4800,
-        amt: 2181,
-    },
-    {
-        name: 'F',
-        uv: 1790,
-        pv: 3800,
-        amt: 2500,
-    },
-    {
-        name: 'S',
-        uv: 2490,
-        pv: 4300,
-        amt: 2100,
-    },
+    { name: 'S',uv: 1400, pv: 2200, amt: 2400, },
+    { name: 'M',uv: 2000, pv: 1398, amt: 2210, },
+    { name: 'T',uv: 1700, pv: 9800, amt: 2290, },
+    { name: 'W',uv: 2180, pv: 3908, amt: 2000, },
+    { name: 'T',uv: 3890, pv: 4800, amt: 2181, },
+    { name: 'F',uv: 1790, pv: 3800, amt: 2500, },
+    { name: 'S',uv: 2490, pv: 4300, amt: 2100, },
 ];
 
 function BarChartWeeklySales() {
@@ -135,81 +100,20 @@ function RadarChartSales () {
 
 
 const dataNivo: {
-    country: string;
-    hot_dog: number;
-    burger: number;
-    sandwich: number;
-    kebab: number;
-    fries: number;
-    donut: number;
+    country: string; hot_dog: number; burger: number; sandwich: number; kebab: number; fries: number; donut: number;
 }[] = [
-    {
-        country: "AD",
-        hot_dog: 6,
-        burger: 121,
-        sandwich: 28,
-        kebab: 176,
-        fries: 155,
-        donut: 1
-    },
-    {
-        country: "AE",
-        hot_dog: 71,
-        burger: 109,
-        sandwich: 10,
-        kebab: 158,
-        fries: 184,
-        donut: 117
-    },
-    {
-        country: "AF",
-        hot_dog: 119,
-        burger: 54,
-        sandwich: 5,
-        kebab: 106,
-        fries: 62,
-        donut: 139
-    },
-    {
-        country: "AG",
-        hot_dog: 164,
-        burger: 48,
-        sandwich: 176,
-        kebab: 15,
-        fries: 170,
-        donut: 91
-    },
-    {
-        country: "AI",
-        hot_dog: 30,
-        burger: 147,
-        sandwich: 66,
-        kebab: 158,
-        fries: 135,
-        donut: 145
-    },
-    {
-        country: "AL",
-        hot_dog: 76,
-        burger: 183,
-        sandwich: 29,
-        kebab: 158,
-        fries: 7,
-        donut: 90
-    },
-    {
-        country: "AM",
-        hot_dog: 83,
-        burger: 170,
-        sandwich: 37,
-        kebab: 12,
-        fries: 9,
-        donut: 120
-    }
+    { country: "AD", hot_dog: 6, burger: 121, sandwich: 28, kebab: 176, fries: 155, donut: 1 },
+    { country: "AE", hot_dog: 71, burger: 109, sandwich: 10, kebab: 158, fries: 184, donut: 117 },
+    { country: "AF", hot_dog: 119, burger: 54, sandwich: 5, kebab: 106, fries: 62, donut: 139 },
+    { country: "AG", hot_dog: 164, burger: 48, sandwich: 176, kebab: 15, fries: 170, donut: 91 },
+    { country: "AI", hot_dog: 30, burger: 147, sandwich: 66, kebab: 158, fries: 135, donut: 145 },
+    { country: "AL", hot_dog: 76, burger: 183, sandwich: 29, kebab: 158, fries: 7, donut: 90 },
+    { country: "AM", hot_dog: 83, burger: 170, sandwich: 37, kebab: 12, fries: 9, donut: 120 }
 ]
 
 
 import { ResponsiveBar } from '@nivo/bar'
+import { p } from 'framer-motion/m';
 
 const MyBarAnalytic = () => (
     <div className="w-full h-56 mt-4">
@@ -332,8 +236,141 @@ const RadicalOnAnalytics = () => {
 
 
 
+// chart Bar eCommerce
+
+
+const dataEcom = [
+    { name: '2018', uv: 4000, pv: 2400, amt: 2400, },
+    { name: '2019', uv: 3000, pv: 1398, amt: 2210, },
+    { name: '2020', uv: 2000, pv: 9800, amt: 2290, },
+    { name: '2021', uv: 2780, pv: 3908, amt: 2000, },
+    { name: '2022', uv: 1890, pv: 4800, amt: 2181, },
+    { name: '2023', uv: 2390, pv: 3800, amt: 2500, },
+    { name: '2024', uv: 3490, pv: 4300, amt: 2100, },
+];
+
+const BarEcomProfit = () => {
+    return (
+        <ResponsiveContainer width="100%" height="80%">
+            <BarChart
+            width={500}
+            height={300}
+            data={dataEcom}
+            margin={{
+                top: 20,
+                right: 30,
+                left: 20,
+                bottom: 0,
+            }}
+            >
+            <XAxis dataKey="name" />
+            {/* <YAxis /> */}
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="pv" stackId="a" fill="#0A6CD5"  />
+            <Bar dataKey="amt" stackId="a" fill="#07c500" />
+            <Bar dataKey="uv" fill="#557899" />
+            </BarChart>
+        </ResponsiveContainer>
+        );
+};
+
+
+const dataRevenue = [
+  { name: 'Page A', uv: 4000, pv: 2400, amt: 2400, },
+  { name: 'Page B', uv: 3000, pv: 1398, amt: 2210, },
+  { name: 'Page C', uv: 2000, pv: 9800, amt: 2290, },
+  { name: 'Page D', uv: 2780, pv: 3908, amt: 2000, },
+  { name: 'Page E', uv: 1890, pv: 4800, amt: 2181, },
+  { name: 'Page F', uv: 2390, pv: 3800, amt: 2500, },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100, },
+];
+
+const RevenueChart = () => {
+    return (
+        <ResponsiveContainer width="100%" height="100%">
+        <LineChart width={300} height={100} data={dataRevenue}>
+            <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
+        </LineChart>
+        </ResponsiveContainer>
+    );
+}
 
 
 
 
-export {BarChartWeeklySales, CircleChartSales, RadarChartSales, MyBarAnalytic, AnalyticTool, RadicalOnAnalytics}
+const dataVisitor = [
+    { name: 'Page A', uv: 2000, pv: 2400, amt: 2400, },
+    { name: 'Page B', uv: 3000, pv: 1398, amt: 2210, },
+    { name: 'Page C', uv: 2000, pv: 9800, amt: 2290, },
+    { name: 'Page D', uv: 3780, pv: 3908, amt: 2000, },
+    { name: 'Page E', uv: 1890, pv: 4800, amt: 2181, },
+    { name: 'Page F', uv: 2390, pv: 3800, amt: 2500, },
+    { name: 'Page G', uv: 2490, pv: 4300, amt: 2100, },
+];
+
+const VisitorsBar = () => {
+    return (
+        <ResponsiveContainer width="100%" height="100%">
+            <BarChart width={120} height={40} data={dataVisitor}>
+                <Bar dataKey="uv" fill="#0A6CD5" radius={[6, 6, 0, 0]} barSize={7} />
+            </BarChart>
+        </ResponsiveContainer>
+    );
+};
+
+
+
+
+const dataCostemVisit = [
+  { name: 'Jan', revenue: 4000, pv: 2400, },
+  { name: 'Feb', revenue: 3000, pv: 2400, },
+  { name: 'Mar', revenue: 6000, pv: 2400, },
+  { name: 'Apr', revenue: 2780, pv: 2400, },
+  { name: 'May', revenue: 5890, pv: 2400, },
+  { name: 'Jun', revenue: 4390, pv: 2400, },
+  { name: 'Jul', revenue: 7490, pv: 2400, },
+];
+
+
+const EcommerceBarChart = () => {
+    return (
+        <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+                width={500}
+                height={300}
+                data={dataCostemVisit}
+                margin={{
+                top: 10,
+                right: 10,
+                left: 10,
+                bottom: 10,
+                }}
+            >
+                <Tooltip />
+                <Bar dataKey="revenue" stackId="a" fill="#0A6CD5" radius={[7,7,0,0]} barSize={8}/>
+                <Bar dataKey="pv" stackId="a" fill="#07c500" radius={[7,7,0,0]} barSize={8}/>
+            </BarChart>
+        </ResponsiveContainer>
+    );
+};
+
+
+
+export {
+    // crm
+    BarChartWeeklySales, 
+    CircleChartSales, 
+    RadarChartSales,
+
+    //analytics
+    MyBarAnalytic, 
+    AnalyticTool, 
+    RadicalOnAnalytics,
+
+    // eCommerce
+    BarEcomProfit,
+    RevenueChart,
+    VisitorsBar,
+    EcommerceBarChart
+}

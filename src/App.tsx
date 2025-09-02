@@ -8,6 +8,13 @@ import { motion } from 'framer-motion';
 import Footer from './sections/Footer';
 import Crm from './sections/AllBarComponent/dashboard/crm';
 import Analytics from './sections/AllBarComponent/dashboard/analytics';
+import { EcommerceDashboard } from './sections/AllBarComponent/dashboard/eCommerce';
+import AcademyDashboard from './sections/AllBarComponent/dashboard/academy';
+import LogisticsDashboard from './sections/AllBarComponent/dashboard/Logistics';
+import CategoryPage from './sections/AllBarComponent/apps & pages/eCommerce/products/category';
+import AddProductPage from './sections/AllBarComponent/apps & pages/eCommerce/products/add';
+import ProductsListPage from './sections/AllBarComponent/apps & pages/eCommerce/products/list';
+
 
 
 const App: React.FC = () => {
@@ -46,8 +53,18 @@ const App: React.FC = () => {
       >
         <NavBar isExpand={isExpanded} isResize={isResizing} />
         <SearchBar />
-        <Analytics />
-      
+        {/* <LogisticsDashboard /> */}
+        {/* <AcademyDashboard /> */}
+        {/* <EcommerceDashboard /> */}
+        {/* <Analytics /> */}
+        {/* <Crm /> */}
+
+        {/* <CategoryPage /> */}
+        {/* <AddProductPage /> */}
+        {/* <ProductsListPage /> */}
+
+
+
         <Footer />
       </motion.div>
     

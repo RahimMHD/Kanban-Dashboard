@@ -3,10 +3,9 @@ import { Heart } from 'lucide-react'
 
 function Footer() {
     return (
-        <footer className='w-[100%] mt-4 text-md font-semibold h-10 text-black flex justify-between items-center'>
+        <footer className='w-[100%] mt-4 text-md font-normal h-10 text-black flex justify-between items-center'>
             <div className={`flex items-center gap-1 `}>
-                @ 2025 Made With  
-                <Heart size={12} className='text-red-600'/> By 
+                @ 2025 Made With  ❤️ By 
                 <span className='text-blue-400 cursor-pointer hover:text-blue-300'> ThemeSelection</span>
             </div>
             <ul className='flex gap-4 text-[#42b1fb] list-none'>
