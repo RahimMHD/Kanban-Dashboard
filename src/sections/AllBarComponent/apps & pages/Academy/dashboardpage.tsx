@@ -369,6 +369,7 @@ const AcademyDashboard = () => {
           </button>
         </div>
       </div>
+
     </div>
   );
 };
