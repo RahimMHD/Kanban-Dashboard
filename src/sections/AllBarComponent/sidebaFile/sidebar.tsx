@@ -109,18 +109,18 @@ const Sidebar: React.FC<ChildComponentProps> = ({ isExpand, isResize }) => {
                 <nav className={`h-[100%] pt-0 ${isExpanded ? "p-4" : "p-2"} space-y-1 transition-[max-height] duration-300 `}>
                     {sections.map((item) => (
                         <SidebarItem
-                        key={item.name}
-                        item={item}
-                        path={[item.name]}
-                        activePath={activePath}
-                        setActivePath={setActivePath}
-                        toggleSection={toggleSection}
-                        openSections={openSections}
-                        setOpenSections={setOpenSections}
-                        activeExpandedSection={activeExpandedSection}
-                        setActiveExpandedSection={setActiveExpandedSection}
-                        isExpanded={isExpanded}
-                        isCheckedExpand={isCheckedExpand}
+                            key={item.name}
+                            item={item}
+                            path={[item.name]}
+                            activePath={activePath}
+                            setActivePath={setActivePath}
+                            toggleSection={toggleSection}
+                            openSections={openSections}
+                            setOpenSections={setOpenSections}
+                            activeExpandedSection={activeExpandedSection}
+                            setActiveExpandedSection={setActiveExpandedSection}
+                            isExpanded={isExpanded}
+                            isCheckedExpand={isCheckedExpand}
                         />
                     ))}
                 </nav>
