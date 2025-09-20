@@ -14,6 +14,15 @@ import LogisticsDashboard from './sections/AllBarComponent/dashboard/Logistics';
 import CategoryPage from './sections/AllBarComponent/apps & pages/eCommerce/products/category';
 import AddProductPage from './sections/AllBarComponent/apps & pages/eCommerce/products/add';
 import ProductsListPage from './sections/AllBarComponent/apps & pages/eCommerce/products/list';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import EcommerceSections from './sections/AllBarComponent/apps & pages/eCommerce/ecommerceSections';
+import OrdersListPage from './sections/AllBarComponent/apps & pages/eCommerce/orders/listOrders';
+import OrderDetailsPage from './sections/AllBarComponent/apps & pages/eCommerce/orders/detailsOrders';
+import CustomersListPage from './sections/AllBarComponent/apps & pages/eCommerce/customers/CustomersListPage';
+import CustomerDetailsPage from './sections/AllBarComponent/apps & pages/eCommerce/customers/CustomerDetailsPage';
+import ReviewsManagementPage from './sections/AllBarComponent/apps & pages/eCommerce/ReviewsManagementPage';
+import Referrals from './sections/AllBarComponent/apps & pages/eCommerce/referralsPage';
+import Settings from './sections/AllBarComponent/apps & pages/eCommerce/settingPage';
 
 
 
@@ -37,38 +46,55 @@ const App: React.FC = () => {
 
 
   return (
-    <div className={`app w-[100%] ${isResizing ? "px-4" : "flex gap-5"} `}>
-      <SideBar 
-        isExpand={handleExpandedFromChild}
-        isResize={isResizing}
-      />
+    <BrowserRouter>
+      <div className={`app w-[100%] ${isResizing ? "px-4" : "flex gap-5"} `}>
+        <SideBar 
+          isExpand={handleExpandedFromChild}
+          isResize={isResizing}
+        />
 
-      <motion.div
-                animate={{
-                  width: isResizing ? "100%" : isExpanded ? "81.6%" : "92%", 
-                  justifyContent: isResizing ? "center" : ""
-                }}
-                transition={{duration: 0.2, ease: "easeInOut"}}
-                className={`flex flex-col relative`}
-      >
-        <NavBar isExpand={isExpanded} isResize={isResizing} />
-        <SearchBar />
-        {/* <LogisticsDashboard /> */}
-        {/* <AcademyDashboard /> */}
-        {/* <EcommerceDashboard /> */}
-        {/* <Analytics /> */}
-        {/* <Crm /> */}
+        <motion.div
+                  animate={{
+                    width: isResizing ? "100%" : isExpanded ? "81.6%" : "92%", 
+                    justifyContent: isResizing ? "center" : ""
+                  }}
+                  transition={{duration: 0.2, ease: "easeInOut"}}
+                  className={`flex flex-col relative`}
+        >
+          <NavBar isExpand={isExpanded} isResize={isResizing} />
+          <SearchBar />
+          <Routes>
+            <Route index element={<Crm />} />
+            <Route path='dashboards/logistics' element={<LogisticsDashboard />} />
+            <Route path='dashboards/academy' element={<AcademyDashboard />} />
+            <Route path='dashboards/ecommerce' element={<EcommerceDashboard />} />
+            <Route path='dashboards/analytics' element={<Analytics />} />
 
-        {/* <CategoryPage /> */}
-        {/* <AddProductPage /> */}
-        {/* <ProductsListPage /> */}
+            <Route path='/category' element={<CategoryPage />} />
+            <Route path='/add-product' element={<AddProductPage />} />
+            <Route path='/products-list' element={<ProductsListPage />} />
 
+            <Route path="ecommerce/dashboard" element={<EcommerceDashboard />} />
+            <Route path="ecommerce/managereviews" element={<ReviewsManagementPage />} />
+            <Route path="ecommerce/referrals" element={<Referrals />} />
+            <Route path="ecommerce/settings" element={<Settings />} />
+            
+            <Route path="ecommerce/products/add" element={<AddProductPage />}/>
+            <Route path="ecommerce/products/list" element={<ProductsListPage />} />
+            <Route path="ecommerce/products/category" element={<CategoryPage />} />
+            
+            <Route path="ecommerce/orders/list" element={<OrdersListPage />} />
+            <Route path="ecommerce/orders/details" element={<OrderDetailsPage />} />
+            
+            <Route path="ecommerce/customers/list" element={<CustomersListPage />} />
+            <Route path="ecommerce/customers/details" element={<CustomerDetailsPage />} />
 
-
-        <Footer />
-      </motion.div>
-    
-    </div>
+          </Routes>
+          <Footer />
+        </motion.div>
+      
+      </div>
+    </BrowserRouter>
   )
 }
 

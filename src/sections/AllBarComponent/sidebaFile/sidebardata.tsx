@@ -44,7 +44,7 @@ export const sections: SidebarItem[] = [
     name: "Dashboards",
     icon: Home,
     children: normalizeTree(
-        ["CRM", "Analytics", "ECommerce", "Academy", "Logistics"]
+        ["CRM", "Analytics", "eCommerce", "Academy", "Logistics"]
     )
 },
 {
@@ -60,9 +60,9 @@ export const sections: SidebarItem[] = [
     children:  normalizeTree(
         [
             "Dashboard",
-            { name: "Products", children: ["List", "Add", "Category"] },
-            { name: "Orders", children: ["List", "Add", "Details"] },
-            { name: "Customers", children: ["List", "Add", "Details"] },
+            { name: "Products", children: [ "Add","List", "Category"] },
+            { name: "Orders", children: ["List", "Details"] },
+            { name: "Customers", children: ["List", "Details"] },
             "Manage Reviews", "Referrals", "Settings"
         ],
     )

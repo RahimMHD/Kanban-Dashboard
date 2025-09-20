@@ -5,6 +5,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, ChevronRight } from "lucide-react";
 import type { SidebarItemProps } from "./types";
+import { Link } from "react-router-dom";
 
 const SidebarItem = React.memo(({ item, path, activePath, depth = 0, setActivePath, openSections, toggleSection, setOpenSections, activeExpandedSection, setActiveExpandedSection, isExpanded, isCheckedExpand}: SidebarItemProps) => {
     const pathKey = path.join("/");
@@ -68,21 +69,34 @@ const SidebarItem = React.memo(({ item, path, activePath, depth = 0, setActivePa
                         transition={{ duration: 0.2 }}
                     >
                         {item.children?.map((child) => (
-                            <SidebarItem
-                                key={child.name}
-                                item={child}
-                                path={[...path, child.name]}
-                                activePath={activePath}
-                                setActivePath={setActivePath}
-                                openSections={openSections}
-                                toggleSection={toggleSection}
-                                depth={depth + 1}
-                                setOpenSections={setOpenSections}
-                                activeExpandedSection={activeExpandedSection}
-                                setActiveExpandedSection={setActiveExpandedSection}
-                                isExpanded={isExpanded}
-                                isCheckedExpand={isCheckedExpand}
-                            />
+                            <Link 
+                                to={
+                                    child.children?.length !== 0 ? "#" 
+                                    : child.name === "CRM" ? "/"
+                                    : path.join("/").split(" ").join("").toLocaleLowerCase() + (child.name && "/" + child.name.split(" ").join("").toLocaleLowerCase()) 
+                                    || "#"} 
+                                key={child.name} 
+                                onClick={() => {
+                                    let test = path.join("/").split(" ").join("");
+                                    console.log(child.name, child.children, test, item.children?.filter(item => item.name === child.name)[0].children);
+                                }} 
+                                className="no-underline"
+                            >
+                                <SidebarItem
+                                    item={child}
+                                    path={[...path, child.name]}
+                                    activePath={activePath}
+                                    setActivePath={setActivePath}
+                                    openSections={openSections}
+                                    toggleSection={toggleSection}
+                                    depth={depth + 1}
+                                    setOpenSections={setOpenSections}
+                                    activeExpandedSection={activeExpandedSection}
+                                    setActiveExpandedSection={setActiveExpandedSection}
+                                    isExpanded={isExpanded}
+                                    isCheckedExpand={isCheckedExpand}
+                                />
+                            </Link>
                         ))}
                     </motion.div>
                 )}
