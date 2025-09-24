@@ -23,6 +23,13 @@ import CustomerDetailsPage from './sections/AllBarComponent/apps & pages/eCommer
 import ReviewsManagementPage from './sections/AllBarComponent/apps & pages/eCommerce/ReviewsManagementPage';
 import Referrals from './sections/AllBarComponent/apps & pages/eCommerce/referralsPage';
 import Settings from './sections/AllBarComponent/apps & pages/eCommerce/settingPage';
+import AcademyCourses from './sections/AllBarComponent/apps & pages/Academy/academyCourses';
+import CourseDetails from './sections/AllBarComponent/apps & pages/Academy/courseDetails';
+import FleetLogistics from './sections/AllBarComponent/apps & pages/logistics/fleetLogistic';
+import InvoiceList from './sections/AllBarComponent/apps & pages/invoice/invoiceList';
+import InvoiceAdd from './sections/AllBarComponent/apps & pages/invoice/invoiceAdd';
+import InvoiceEdit from './sections/AllBarComponent/apps & pages/invoice/invoiceEdit';
+import InvoicePreview from './sections/AllBarComponent/apps & pages/invoice/invoicePreview';
 
 
 
@@ -64,30 +71,43 @@ const App: React.FC = () => {
           <NavBar isExpand={isExpanded} isResize={isResizing} />
           <SearchBar />
           <Routes>
+            {/* dashboard sections  */}
             <Route index element={<Crm />} />
             <Route path='dashboards/logistics' element={<LogisticsDashboard />} />
             <Route path='dashboards/academy' element={<AcademyDashboard />} />
             <Route path='dashboards/ecommerce' element={<EcommerceDashboard />} />
             <Route path='dashboards/analytics' element={<Analytics />} />
 
-            <Route path='/category' element={<CategoryPage />} />
+            {/* <Route path='/category' element={<CategoryPage />} />
             <Route path='/add-product' element={<AddProductPage />} />
-            <Route path='/products-list' element={<ProductsListPage />} />
+            <Route path='/products-list' element={<ProductsListPage />} /> */}
 
             <Route path="ecommerce/dashboard" element={<EcommerceDashboard />} />
             <Route path="ecommerce/managereviews" element={<ReviewsManagementPage />} />
             <Route path="ecommerce/referrals" element={<Referrals />} />
             <Route path="ecommerce/settings" element={<Settings />} />
-            
             <Route path="ecommerce/products/add" element={<AddProductPage />}/>
             <Route path="ecommerce/products/list" element={<ProductsListPage />} />
-            <Route path="ecommerce/products/category" element={<CategoryPage />} />
-            
+            <Route path="ecommerce/products/category" element={<CategoryPage />} /> 
             <Route path="ecommerce/orders/list" element={<OrdersListPage />} />
-            <Route path="ecommerce/orders/details" element={<OrderDetailsPage />} />
-            
+            <Route path="ecommerce/orders/details" element={<OrderDetailsPage />} />            
             <Route path="ecommerce/customers/list" element={<CustomersListPage />} />
             <Route path="ecommerce/customers/details" element={<CustomerDetailsPage />} />
+
+            {/* academy sections  */}
+            <Route path='academy/dashboard' element={<AcademyDashboard />} />
+            <Route path='academy/mycourses' element={<AcademyCourses />} />
+            <Route path='academy/coursedetails' element={<CourseDetails />} />
+
+            {/* logistics sections  */}
+            <Route path='logistics/dashboard' element={<LogisticsDashboard />} />
+            <Route path='logistics/fleet' element={<FleetLogistics />} />
+            
+            {/* logistics sections  */}
+            <Route path='invoice/list' element={<InvoiceList />} />
+            <Route path='invoice/add' element={<InvoiceAdd />} />
+            <Route path='invoice/edit' element={<InvoiceEdit />} />
+            <Route path='invoice/preview' element={<InvoicePreview />} />
 
           </Routes>
           <Footer />

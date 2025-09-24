@@ -85,7 +85,7 @@ const CustomersListPage = () => {
   ];
 
   return (
-    <div className="p-6 space-y-6 bg-gray-50">
+    <div className="p-6 space-y-6 bg-white">
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
@@ -95,7 +95,7 @@ const CustomersListPage = () => {
             <input 
               type="text" 
               placeholder="Search #K" 
-              className="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 w-64"
+              className="pl-10 pr-4 py-2 bg-[#eee] border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 w-64"
             />
           </div>
         </div>
@@ -135,7 +135,7 @@ const CustomersListPage = () => {
                   <td className="py-4">{customer.orders}</td>
                   <td className="py-4">
                     {customer.totalSpent === 'Buy Now' ? (
-                      <button className="px-3 py-1 bg-primary text-white rounded-lg text-sm">
+                      <button className="px-3 py-1 bg-[#eee] rounded-lg text-sm">
                         Buy Now
                       </button>
                     ) : (
@@ -150,11 +150,11 @@ const CustomersListPage = () => {
 
         {/* Action Buttons */}
         <div className="flex items-center space-x-4 mt-6">
-          <button className="flex items-center px-4 py-2 bg-primary text-white rounded-lg">
+          <button className="flex items-center px-4 py-2 bg-[#eee] rounded-lg">
             <Plus size={16} className="mr-2" />
             Add Customer
           </button>
-          <button className="flex items-center px-4 py-2 bg-primary text-white rounded-lg">
+          <button className="flex items-center px-4 py-2 bg-[#eee] rounded-lg">
             <Plus size={16} className="mr-2" />
             Add Customer
           </button>
