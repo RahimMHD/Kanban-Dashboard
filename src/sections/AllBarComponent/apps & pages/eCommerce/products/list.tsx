@@ -28,21 +28,7 @@ const ProductsListPage = () => {
   ];
 
   return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div className="flex justify-between items-center">
-        <div>
-          <h1 className="text-2xl font-semibold">MATERIO</h1>
-        </div>
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          <input 
-            type="text" 
-            placeholder="Search" 
-            className="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 w-64"
-          />
-        </div>
-      </div>
+    <div className="space-y-6 mt-4">
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Left Sidebar - Categories */}
@@ -70,13 +56,13 @@ const ProductsListPage = () => {
                   <Filter size={16} className="mr-2" />
                   Filters
                 </button>
-                <select className="px-4 py-2 border rounded-lg">
+                <select className="px-4 py-2 bg-[#eee] border rounded-lg">
                   <option>Status</option>
                 </select>
-                <select className="px-4 py-2 border rounded-lg">
+                <select className="px-4 py-2 bg-[#eee] border rounded-lg">
                   <option>Category</option>
                 </select>
-                <select className="px-4 py-2 border rounded-lg">
+                <select className="px-4 py-2 bg-[#eee] border rounded-lg">
                   <option>Stock</option>
                 </select>
               </div>

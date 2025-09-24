@@ -97,62 +97,18 @@ const mockInvoiceData: InvoiceData = {
 
 const InvoicePreview = () => {
   const { id } = useParams();
-  const location = useLocation();
   const [paymentMethod, setPaymentMethod] = useState('internet-banking');
   const [paymentTerms, setPaymentTerms] = useState(false);
   const [clientNotes, setClientNotes] = useState(false);
   const [paymentStub, setPaymentStub] = useState(false);
   const [showPaymentDropdown, setShowPaymentDropdown] = useState(false);
 
-  const sidebarItems = [
-    { label: 'List', href: '/invoice', active: location.pathname === '/invoice' },
-    { label: 'Preview', href: '/invoice/preview/4987', active: location.pathname.includes('/preview') },
-    { label: 'Edit', href: '/invoice/edit/4987', active: location.pathname.includes('/edit') },
-    { label: 'Add', href: '/invoice/add', active: location.pathname.includes('/add') }
-  ];
-
   return (
-    <div className="min-h-screen bg-background flex">
-      {/* Sidebar */}
-      <div className="w-64 bg-sidebar-background border-r border-sidebar-border p-6">
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 mb-6">
-            <div className="w-6 h-6 bg-primary rounded flex items-center justify-center text-white text-sm font-bold">
-              M
-            </div>
-            <span className="font-bold text-lg">MATERIO</span>
-          </div>
-          
-          <nav className="space-y-1">
-            {sidebarItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                  item.active 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'text-sidebar-foreground hover:bg-sidebar-accent'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-        
-        <div className="mt-8 space-y-2">
-          <div className="text-sm font-medium mb-4">User</div>
-          <div className="text-sm font-medium mb-4">Roles & Permissions</div>
-          <div className="text-sm font-medium mb-4">Pages</div>
-          <div className="text-sm font-medium mb-4">Auth Pages</div>
-          <div className="text-sm font-medium mb-4">Wizard Examples</div>
-          <div className="text-sm font-medium mb-4">Dialog Examples</div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-background flex">      
 
       {/* Main Content */}
-      <div className="flex-1 flex">
-        <div className="flex-1 p-6">
+      <div className="flex-1 flex gap-4">
+        <div className="flex-1 bg-white">
           <div className="p-8 bg-card border rounded-lg shadow-sm">
             {/* Header */}
             <div className="flex justify-between items-start mb-8">
@@ -282,7 +238,7 @@ const InvoicePreview = () => {
         </div>
 
         {/* Right Sidebar */}
-        <div className="w-80 p-6 space-y-4 bg-sidebar-background border-l border-sidebar-border">
+        <div className="w-80 p-6 space-y-4 bg-sidebar-background border-l border-sidebar-border bg-white">
           <button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 px-4 rounded-lg font-medium flex items-center justify-center transition-colors">
             <Send className="h-4 w-4 mr-2" />
             Send Invoice

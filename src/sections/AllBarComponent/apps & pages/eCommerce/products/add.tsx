@@ -32,19 +32,19 @@ const AddProductPage = () => {
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Product Name</label>
-                <input type="text" className="w-full p-2 border rounded-lg" />
+                <input type="text" className="bg-[#eee] w-full p-2 border rounded-lg" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">SKU</label>
-                <input type="text" className="w-full p-2 border rounded-lg" />
+                <input type="text" className="bg-[#eee] w-full p-2 border rounded-lg" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Barcode</label>
-                <input type="text" className="w-full p-2 border rounded-lg" />
+                <input type="text" className="bg-[#eee] w-full p-2 border rounded-lg" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Description (Optional)</label>
-                <textarea className="w-full p-2 border rounded-lg h-20" />
+                <textarea className="w-full p-2 bg-[#eee] border rounded-lg h-20" />
               </div>
               <div className="flex space-x-2">
                 {['B', 'U', 'T', 'E', 'F', 'G', 'H', 'I', 'J'].map((btn) => (
@@ -95,7 +95,7 @@ const AddProductPage = () => {
             <div className="space-y-4">
               {variants.map((variant) => (
                 <div key={variant.id} className="flex space-x-4 items-start">
-                  <select className="flex-1 p-2 border rounded-lg">
+                  <select className="flex-1 p-2 bg-[#eee] border rounded-lg">
                     <option>Select Variant</option>
                     <option>Size</option>
                     <option>Color</option>
@@ -104,7 +104,7 @@ const AddProductPage = () => {
                   <input 
                     type="text" 
                     placeholder="Variant Value" 
-                    className="flex-1 p-2 border rounded-lg" 
+                    className="flex-1 p-2 border bg-[#eee] rounded-lg" 
                   />
                   <button 
                     onClick={() => removeVariant(variant.id)}
@@ -159,11 +159,11 @@ const AddProductPage = () => {
             <div className="space-y-3">
               <div>
                 <label className="block text-sm text-gray-700 mb-1">Base Price</label>
-                <input type="number" className="w-full p-2 border rounded-lg" />
+                <input type="number" className="bg-[#eee] w-full p-2 border rounded-lg" />
               </div>
               <div>
                 <label className="block text-sm text-gray-700 mb-1">Discounted Price</label>
-                <input type="number" className="w-full p-2 border rounded-lg" />
+                <input type="number" className="bg-[#eee] w-full p-2 border rounded-lg" />
               </div>
               <label className="flex items-center">
                 <input type="checkbox" className="mr-2" />
@@ -180,16 +180,16 @@ const AddProductPage = () => {
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <h2 className="font-semibold mb-4">Organize</h2>
             <div className="space-y-3">
-              <select className="w-full p-2 border rounded-lg">
+              <select className="w-full p-2 bg-[#eee] border rounded-lg">
                 <option>Select Vendor</option>
               </select>
-              <select className="w-full p-2 border rounded-lg">
+              <select className="w-full p-2 bg-[#eee] border rounded-lg">
                 <option>Select Category</option>
               </select>
-              <select className="w-full p-2 border rounded-lg">
+              <select className="w-full p-2 bg-[#eee] border rounded-lg">
                 <option>Select Collection</option>
               </select>
-              <select className="w-full p-2 border rounded-lg">
+              <select className="w-full p-2 bg-[#eee] border rounded-lg">
                 <option>Select Status</option>
               </select>
               <input type="text" placeholder="Enter Tags" className="w-full p-2 border rounded-lg" />

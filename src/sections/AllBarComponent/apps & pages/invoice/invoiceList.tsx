@@ -96,11 +96,10 @@ const InvoiceList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [showDropdown, setShowDropdown] = useState('');
-  const location = useLocation();
 
   const filteredInvoices = mockInvoices.filter(invoice => {
     const matchesSearch = invoice.client.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         invoice.number.toLowerCase().includes(searchTerm.toLowerCase());
+                          invoice.number.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesStatus = statusFilter === 'all' || invoice.status === statusFilter;
     return matchesSearch && matchesStatus;
   });
@@ -120,57 +119,15 @@ const InvoiceList = () => {
   const totalPaid = mockInvoices.filter(inv => inv.status === 'paid').reduce((sum, inv) => sum + inv.total, 0);
   const totalUnpaid = mockInvoices.filter(inv => inv.status === 'unpaid').reduce((sum, inv) => sum + inv.balance, 0);
 
-  const sidebarItems = [
-    { label: 'List', href: '/invoice', active: location.pathname === '/invoice' },
-    { label: 'Preview', href: '/invoice/preview/4987', active: location.pathname.includes('/preview') },
-    { label: 'Edit', href: '/invoice/edit/4987', active: location.pathname.includes('/edit') },
-    { label: 'Add', href: '/invoice/add', active: location.pathname.includes('/add') }
-  ];
 
   return (
-    <div className="min-h-screen bg-background flex">
-      {/* Sidebar */}
-      <div className="w-64 bg-sidebar-background border-r border-sidebar-border p-6">
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 mb-6">
-            <div className="w-6 h-6 bg-primary rounded flex items-center justify-center text-white text-sm font-bold">
-              M
-            </div>
-            <span className="font-bold text-lg">MATERIO</span>
-          </div>
-          
-          <nav className="space-y-1">
-            {sidebarItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                  item.active 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'text-sidebar-foreground hover:bg-sidebar-accent'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-        
-        <div className="mt-8 space-y-2">
-          <div className="text-sm font-medium mb-4">User</div>
-          <div className="text-sm font-medium mb-4">Roles & Permissions</div>
-          <div className="text-sm font-medium mb-4">Pages</div>
-          <div className="text-sm font-medium mb-4">Auth Pages</div>
-          <div className="text-sm font-medium mb-4">Wizard Examples</div>
-          <div className="text-sm font-medium mb-4">Dialog Examples</div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-[#eee] flex">
 
       {/* Main Content */}
       <div className="flex-1 p-6">
         {/* Metrics Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+          <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-white">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center">
                 <Users className="h-5 w-5 text-blue-500" />
@@ -182,7 +139,7 @@ const InvoiceList = () => {
             </div>
           </div>
           
-          <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+          <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-white">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center">
                 <FileText className="h-5 w-5 text-blue-500" />
@@ -194,7 +151,7 @@ const InvoiceList = () => {
             </div>
           </div>
           
-          <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+          <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-white">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center">
                 <DollarSign className="h-5 w-5 text-blue-500" />
@@ -206,7 +163,7 @@ const InvoiceList = () => {
             </div>
           </div>
           
-          <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+          <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-white">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center">
                 <AlertCircle className="h-5 w-5 text-blue-500" />
@@ -220,10 +177,10 @@ const InvoiceList = () => {
         </div>
 
         {/* Actions Bar */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-between mb-6">
+        <div className="flex flex-col sm:flex-row gap-4 justify-between mb-6 p-4 bg-white">
           <Link
             to="/invoice/add"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-[#eee] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
           >
             <Plus className="h-4 w-4 mr-2" />
             Create Invoice
@@ -236,13 +193,13 @@ const InvoiceList = () => {
                 placeholder="Search Invoice"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="flex h-10 w-64 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pl-9"
+                className="flex h-10 w-64 rounded-md border border-input bg-[#eee] px-3 py-2 text-sm ring-offset-[#eee] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pl-9"
               />
             </div>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-40"
+              className="flex h-10 items-center justify-between rounded-md border border-input bg-[#eee] px-3 py-2 text-sm ring-offset-[#eee] placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-40"
             >
               <option value="all">All Status</option>
               <option value="paid">Paid</option>
@@ -254,12 +211,12 @@ const InvoiceList = () => {
         </div>
 
         {/* Invoice Table */}
-        <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div className="border bg-card m-0 text-card-foreground shadow-sm p-3 bg-white">
           <table className="w-full caption-bottom text-sm">
             <thead className="[&_tr]:border-b">
               <tr className="border-b border-border transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
                 <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 w-12">
-                  <input type="checkbox" className="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground" />
+                  <input type="checkbox" className="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-[#eee] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground" />
                 </th>
                 <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">#</th>
                 <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">STATUS</th>
@@ -274,7 +231,7 @@ const InvoiceList = () => {
               {filteredInvoices.map((invoice) => (
                 <tr key={invoice.id} className="border-b border-border transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
                   <td className="p-4 align-middle [&:has([role=checkbox])]:pr-0">
-                    <input type="checkbox" className="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground" />
+                    <input type="checkbox" className="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-[#eee] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground" />
                   </td>
                   <td className="p-4 align-middle [&:has([role=checkbox])]:pr-0">
                     <Link to={`/invoice/preview/${invoice.id}`} className="text-primary hover:underline font-medium">
@@ -314,14 +271,14 @@ const InvoiceList = () => {
                   <td className="p-4 align-middle [&:has([role=checkbox])]:pr-0">
                     <div className="flex items-center gap-2">
                       {invoice.status === 'unpaid' && (
-                        <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 rounded-md px-3 bg-pink-500 hover:bg-pink-600 text-white">
+                        <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-[#eee] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 rounded-md px-3 bg-pink-500 hover:bg-pink-600 text-white">
                           Buy Now
                         </button>
                       )}
                       <div className="relative">
                         <button 
                           onClick={() => setShowDropdown(showDropdown === invoice.id ? '' : invoice.id)}
-                          className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                          className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-[#eee] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
                         >
                           <MoreHorizontal className="h-4 w-4" />
                         </button>
@@ -355,10 +312,10 @@ const InvoiceList = () => {
         </div>
 
         {/* Pagination */}
-        <div className="flex items-center justify-between mt-6">
+        <div className="flex items-center justify-between m-0 p-4 bg-white">
           <div className="flex items-center gap-2">
             <span className="text-sm text-muted-foreground">Rows per page:</span>
-            <select className="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-16">
+            <select className="flex h-10 items-center justify-between rounded-md border border-input bg-[#eee] px-3 py-2 text-sm ring-offset-[#eee] placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-16">
               <option value="10">10</option>
               <option value="25">25</option>
               <option value="50">50</option>
@@ -369,11 +326,11 @@ const InvoiceList = () => {
             <div className="flex gap-1">
               <button 
                 disabled
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-[#eee] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
               >
                 ←
               </button>
-              <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+              <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-[#eee] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
                 →
               </button>
             </div>
