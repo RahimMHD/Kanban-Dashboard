@@ -16,9 +16,9 @@ const Referrals = () => {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md max-w-6xl mx-auto">
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">MATERIO</h1>
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">MATERIO</h1>
         <div className="relative">
           <input
             type="text"
@@ -43,7 +43,7 @@ const Referrals = () => {
       </div>
 
       <div className="mb-8">
-        <h2 className="text-lg font-semibold text-gray-700 mb-4">eCommerce</h2>
+        <h2 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">eCommerce</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {[
             "Dashboard", "Products", "Orders", "Customers", "Manage Reviews", "Referrals",
@@ -57,27 +57,27 @@ const Referrals = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-          <p className="text-gray-600 text-sm">Total Earning</p>
-          <p className="text-2xl font-bold text-gray-800">$24,983</p>
+        <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+          <p className="text-gray-600 dark:text-gray-300 text-sm">Total Earning</p>
+          <p className="text-2xl font-bold text-gray-800 dark:text-white">$24,983</p>
         </div>
-        <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-          <p className="text-gray-600 text-sm">Unpaid Earning</p>
-          <p className="text-2xl font-bold text-gray-800">$8,647</p>
+        <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+          <p className="text-gray-600 dark:text-gray-300 text-sm">Unpaid Earning</p>
+          <p className="text-2xl font-bold text-gray-800 dark:text-white">$8,647</p>
         </div>
-        <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-          <p className="text-gray-600 text-sm">Signups</p>
-          <p className="text-2xl font-bold text-gray-800">2,367</p>
+        <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+          <p className="text-gray-600 dark:text-gray-300 text-sm">Signups</p>
+          <p className="text-2xl font-bold text-gray-800 dark:text-white">2,367</p>
         </div>
-        <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-          <p className="text-gray-600 text-sm">Conversion Rate</p>
-          <p className="text-2xl font-bold text-gray-800">4.5%</p>
+        <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+          <p className="text-gray-600 dark:text-gray-300 text-sm">Conversion Rate</p>
+          <p className="text-2xl font-bold text-gray-800 dark:text-white">4.5%</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
         <div className="lg:col-span-2 bg-gray-50 p-6 rounded-lg">
-          <h3 className="text-lg font-semibold text-gray-700 mb-4">How to use</h3>
+          <h3 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">How to use</h3>
           <p className="text-gray-600 mb-4">Integrate your referral code in 3 easy steps.</p>
           <ul className="space-y-4">
             <li className="flex items-start">
@@ -96,7 +96,7 @@ const Referrals = () => {
         </div>
 
         <div className="bg-white p-6 rounded-lg border border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-700 mb-4">Invite your friends</h3>
+          <h3 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">Invite your friends</h3>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-medium mb-2">Email Address</label>
             <input
@@ -118,24 +118,24 @@ const Referrals = () => {
       </div>
 
       <div className="mb-8">
-        <h3 className="text-lg font-semibold text-gray-700 mb-4">Referred users</h3>
+        <h3 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">Referred users</h3>
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead className="bg-gray-50 dark:bg-gray-700">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">USERS</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">REFERRED ID</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">STATUS</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">VALUE</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Buy Now</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">USERS</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">REFERRED ID</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">STATUS</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">VALUE</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Buy Now</th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700">
               {referredUsers.map((user, index) => (
                 <tr key={index}>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="font-medium text-gray-900">{user.name}</div>
-                    {user.email && <div className="text-sm text-gray-500">{user.email}</div>}
+                    <div className="font-medium text-gray-900 dark:text-white">{user.name}</div>
+                    {user.email && <div className="text-sm text-gray-500 dark:text-gray-300">{user.email}</div>}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.id}</td>
                   <td className="px-6 py-4 whitespace-nowrap">

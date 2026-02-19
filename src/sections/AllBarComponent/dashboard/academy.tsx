@@ -84,13 +84,13 @@ const AcademyDashboard = () => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 dark:text-white">
       {/* Header */}
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6'>
-        <div className="col-span-2 bg-white p-4 rounded-lg shadow-xl">
+        <div className="col-span-2 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl">
           <div>
-            <h1 className="text-2xl font-semibold">Welcome back, Felecia 👋🏻</h1>
-            <p className="text-gray-500 w-[70%] mt-2">Your progress this week is Awesome. let's keep it up and get a lot of points reward!</p>
+            <h1 className="text-2xl font-semibold dark:text-white">Welcome back, Felecia 👋🏻</h1>
+            <p className="text-gray-500 dark:text-white w-[70%] mt-2">Your progress this week is Awesome. let's keep it up and get a lot of points reward!</p>
           </div>
           <div className='flex items-center mt-4 justify-between'>
             <div className="flex items-center space-x-4">
@@ -99,7 +99,7 @@ const AcademyDashboard = () => {
               </div>
               <div className=''>
                 <h2>Hours Spent</h2>
-                <h2 className='text-[#5d36e7]'>34h</h2>
+                <h2 className='text-[#5d36e7] dark:text-white'>34h</h2>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -108,7 +108,7 @@ const AcademyDashboard = () => {
               </div>
               <div className=''>
                 <h2>Test Results</h2>
-                <h2 className='text-[#0A6CD5]'>82%</h2>
+                <h2 className='text-[#0A6CD5] dark:text-white'>82%</h2>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -117,17 +117,17 @@ const AcademyDashboard = () => {
               </div>
               <div className=''>
                 <h2>Course Completed</h2>
-                <h2 className='text-[#ffb400]'>14</h2>
+                <h2 className='text-[#ffb400] dark:text-white'>14</h2>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-white p-4 rounded-lg shadow-xl col-span-1 flex items-center justify-between">
+        <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl col-span-1 flex items-center justify-between">
           <div>
             <div className='mb-6 space-y-2'>
-              <h2 className='text-xl font-semibold'>Time Spending</h2>
-              <p className='text-gray-500'>Weekly Report </p>
+              <h2 className='text-xl font-semibold dark:text-white'>Time Spending</h2>
+              <p className='text-gray-500 dark:text-white'>Weekly Report </p>
             </div>
             <div className='mt-4 space-y-2'>
               <h2 className='text-xl font-semibold'>23h 14m</h2>
@@ -164,8 +164,8 @@ const AcademyDashboard = () => {
       {/* Second Row */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Pie Chart */}
-        <div className="bg-white p-6 rounded-xl col-span-2 shadow-sm">
-          <h3 className="font-semibold mb-6">Topic you are interested in</h3>
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl col-span-2 shadow-sm">
+          <h3 className="font-semibold mb-6 dark:text-white">Topic you are interested in</h3>
           <div className="flex">
             <div className="w-4/5 h-full">
               <ResponsiveContainer width="100%" height={300}>
@@ -208,7 +208,7 @@ const AcademyDashboard = () => {
                     className="w-3 h-3 rounded-full mr-2" 
                     style={{ backgroundColor: COLORS[index] }}
                   />
-                  <span className="text-sm p-2">{item.name}</span>
+                  <span className="text-sm p-2 dark:text-white">{item.name}</span>
                 </div>
               ))}
             </div>
@@ -216,14 +216,14 @@ const AcademyDashboard = () => {
         </div>
 
         {/* Top Courses */}
-        <div className="bg-white p-6 rounded-xl shadow-sm">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
           <div className="flex justify-between items-center mb-3">
-            <h3 className="font-semibold">Top courses</h3>
-            <MoreVertical className="text-gray-400" />
+            <h3 className="font-semibold dark:text-white">Top courses</h3>
+            <MoreVertical className="text-gray-400 dark:text-white" />
           </div>
           <div className='flex items-center justify-between py-3'>
-            <h3 className='text-md font-normal text-gray-500'>INSTRUCTORS</h3>
-            <h3 className='text-md font-normal text-gray-500'>COURSES</h3>
+            <h3 className='text-md font-normal text-gray-500 dark:text-white'>INSTRUCTORS</h3>
+            <h3 className='text-md font-normal text-gray-500 dark:text-white'>COURSES</h3>
           </div>
           <div className="space-y-4">
             {[
@@ -232,14 +232,14 @@ const AcademyDashboard = () => {
               {name: 'Basic Front-end',job: "Ui", img: "../../../../public/images/avatars/3.png", value: 33},
               {name: 'Development Course',job: "Ui", img: "../../../../public/images/avatars/4.png", value: 21},
             ].map((course, index) => (
-              <div key={index} className="flex items-center justify-between p-1 hover:bg-gray-50 rounded">
+              <div key={index} className="flex items-center justify-between p-1 hover:bg-gray-50 dark:hover:bg-gray-700 rounded">
                 <div className='flex items-center gap-2'>
                   <div className='flex items-center justify-center w-12 h-12 rounded-full'>
                     <img src={course.img} alt="" className='rounded-full' />
                   </div>
                   <div>
-                    <span className="text-sm">{course.name}</span>
-                    <p>{course.job}</p>
+                    <span className="text-sm dark:text-white">{course.name}</span>
+                    <p className="dark:text-white">{course.job}</p>
                   </div>
                 </div>
                 <span>{course.value}</span>
@@ -252,57 +252,64 @@ const AcademyDashboard = () => {
       {/* Third Row - 3 Columns */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Assignment Progress */}
-        <div className="bg-white p-6 rounded-xl shadow-sm">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="font-semibold">Assignment progress</h3>
-            <MoreVertical className="text-gray-400" />
+            <h3 className="font-semibold dark:text-white">Assignment progress</h3>
+            <MoreVertical className="text-gray-400 dark:text-white" />
           </div>
           <div className="space-y-4">
             {assignmentData.map((item, index) => (
-              <div key={index} className="p-3 border rounded-lg">
-                <h4 className="font-medium">{item.title}</h4>
-                <p className="text-gray-500 text-sm mt-1">{item.tasks}</p>
+              <div key={index} className="p-3 border rounded-lg dark:border-gray-700">
+                <h4 className="font-medium dark:text-white">{item.title}</h4>
+                <p className="text-gray-500 text-sm mt-1 dark:text-white">{item.tasks}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Upcoming Webinar */}
-        <div className="bg-white p-6 rounded-xl shadow-sm">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="font-semibold">Upcoming Webinar</h3>
-            <MoreVertical className="text-gray-400" />
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+          <div className='h-48 w-full flex items-center justify-center mb-2 rounded-xl'>
+            <img src="../../../../public/images/cards/3.png" className='h-48 rounded-xl' alt="" />
           </div>
-          <div className="p-4 bg-gray-50 rounded-lg">
+          <div className="flex justify-between items-center mb-2">
+            <h3 className="font-semibold dark:text-white">Upcoming Webinar</h3>
+          </div>
+          <div className="p-4 rounded-lg">
             <h4 className="font-medium">Next Generation Frontend Architecture Using Layout Engine And React Native Web.</h4>
-            <div className="flex items-center mt-3 text-sm text-gray-500">
+            <div className="flex items-center mt-3 text-sm text-gray-500 dark:text-white">
               <Calendar className="mr-2" size={16} />
               <span>17 Nov 23</span>
               <Clock className="ml-4 mr-2" size={16} />
               <span>32 Minutes</span>
             </div>
           </div>
+          <div className='text-center mt-4 text-white text-xl font-bold'>
+            <button className='bg-[#0A6CD5] w-[100%] py-2 px-4 rounded-lg'>Join Us</button>
+          </div>
         </div>
 
         {/* Course you are taking */}
-        <div className="bg-white p-6 rounded-xl shadow-sm">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="font-semibold">Course you are taking</h3>
-            <MoreVertical className="text-gray-400" />
+            <h3 className="font-semibold dark:text-white">Course you are taking</h3>
+            <MoreVertical className="text-gray-400 dark:text-white" />
           </div>
           <div className="space-y-4">
-            {courseData.slice(0, 2).map((course, index) => (
+            {courseData.slice(0, 4).map((course, index) => (
               <div key={index} className="p-3 border rounded-lg">
-                <h4 className="font-medium">{course.name}</h4>
-                <p className="text-gray-500 text-sm">{course.instructor}</p>
+                <div className='flex justify-between items-center'>
+                  <h4 className="font-medium dark:text-white">{course.name}</h4>
+                  <p className="text-gray-500 text-sm dark:text-white">{course.instructor}</p>
+                </div>
                 <div className="flex justify-between mt-2 text-sm">
                   <span>{course.time}</span>
                   <span>{course.progress}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
+                <div className="relative w-full bg-gray-200 rounded-full h-2 mt-1">
                   <div 
-                    className="bg-primary h-2 rounded-full" 
-                    style={{ width: `${course.progress}%` }}
+                    className={`bg-[${course.progress >= 80 ? '#28C76F' : '#7367F0'}] absolute top-0 left-0 h-2 rounded-full`} 
+                    // style={{ width: `${course.progress}%` }}
                   />
                 </div>
               </div>
@@ -312,15 +319,15 @@ const AcademyDashboard = () => {
       </div>
 
       {/* Fourth Row - Course Table */}
-      <div className="bg-white p-6 rounded-xl shadow-sm">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr className="text-left text-gray-500 border-b">
-                <th className="pb-3 font-medium">COURSE NAME</th>
-                <th className="pb-3 font-medium">TIME</th>
-                <th className="pb-3 font-medium">PROGRESS</th>
-                <th className="pb-3 font-medium">STATUS</th>
+                <th className="pb-3 font-medium dark:text-white">COURSE NAME</th>
+                <th className="pb-3 font-medium dark:text-white">TIME</th>
+                <th className="pb-3 font-medium dark:text-white">PROGRESS</th>
+                <th className="pb-3 font-medium dark:text-white">STATUS</th>
                 <th className="pb-3 font-medium"></th>
               </tr>
             </thead>
@@ -328,8 +335,8 @@ const AcademyDashboard = () => {
               {courseData.map((course, index) => (
                 <tr key={index} className="border-b last:border-0">
                   <td className="py-4">
-                    <div className="font-medium">{course.name}</div>
-                    <div className="text-gray-500 text-sm">{course.instructor}</div>
+                    <div className="font-medium dark:text-white">{course.name}</div>
+                    <div className="text-gray-500 text-sm dark:text-white">{course.instructor}</div>
                   </td>
                   <td className="py-4">{course.time}</td>
                   <td className="py-4">
@@ -362,8 +369,8 @@ const AcademyDashboard = () => {
           </table>
         </div>
         <div className="flex justify-between items-center mt-4">
-          <span className="text-gray-500">Rows per page: 5</span>
-          <span className="text-gray-500">1–5 of 25</span>
+          <span className="text-gray-500 dark:text-white">Rows per page: 5</span>
+          <span className="text-gray-500 dark:text-white">1–5 of 25</span>
           <button className="bg-primary text-white px-4 py-2 rounded-lg">
             Buy Now
           </button>

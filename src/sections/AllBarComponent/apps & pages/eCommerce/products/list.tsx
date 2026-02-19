@@ -29,17 +29,16 @@ const ProductsListPage = () => {
 
   return (
     <div className="space-y-6 mt-4">
-
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Left Sidebar - Categories */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h2 className="font-semibold mb-4">CATEGORIES</h2>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h2 className="font-semibold mb-4 dark:text-white">CATEGORIES</h2>
             <div className="space-y-3">
               {categories.map((category, index) => (
-                <div key={index} className="p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
-                  <p className="font-medium">{category}</p>
-                  <p className="text-sm text-gray-500 mt-1">Choose from wide range of products online at best prices.</p>
+                <div key={index} className="p-3 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg cursor-pointer">
+                  <p className="font-medium dark:text-white">{category}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-300 mt-1">Choose from wide range of products online at best prices.</p>
                 </div>
               ))}
             </div>
@@ -49,7 +48,7 @@ const ProductsListPage = () => {
         {/* Main Content */}
         <div className="lg:col-span-3 space-y-6">
           {/* Filters and Actions */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
             <div className="flex justify-between items-center mb-6">
               <div className="flex items-center space-x-4">
                 <button className="flex items-center px-4 py-2 border rounded-lg">
@@ -82,8 +81,8 @@ const ProductsListPage = () => {
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="text-left text-gray-500 border-b">
-                    <th className="pb-3 font-medium">PRODUCT</th>
+                  <tr className="text-left text-gray-500 dark:text-gray-300 border-b">
+                    <th className="pb-3 font-medium dark:text-white">PRODUCT</th>
                     <th className="pb-3 font-medium">CATEGORY</th>
                     <th className="pb-3 font-medium">STOCK</th>
                     <th className="pb-3 font-medium">PRICE</th>
@@ -94,8 +93,8 @@ const ProductsListPage = () => {
                   {products.map((product) => (
                     <tr key={product.id} className="border-b last:border-0">
                       <td className="py-4">
-                        <div className="font-medium">{product.name}</div>
-                        <div className="text-sm text-gray-500">{product.description}</div>
+                        <div className="font-medium dark:text-white">{product.name}</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-300">{product.description}</div>
                       </td>
                       <td className="py-4">{product.category}</td>
                       <td className="py-4">{product.stock}</td>
@@ -118,25 +117,25 @@ const ProductsListPage = () => {
 
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm text-gray-500">Total products</p>
-              <p className="font-semibold">12,548</p>
+            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
+              <p className="text-sm text-gray-500 dark:text-gray-300">Total products</p>
+              <p className="font-semibold dark:text-white">12,548</p>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm text-gray-500">Total Earnings</p>
-              <p className="font-semibold">$98,784.00</p>
+            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
+              <p className="text-sm text-gray-500 dark:text-gray-300">Total Earnings</p>
+              <p className="font-semibold dark:text-white">$98,784.00</p>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm text-gray-500">Actions</p>
-              <p className="font-semibold">4,689 | $45,627.00</p>
+            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
+              <p className="text-sm text-gray-500 dark:text-gray-300">Actions</p>
+              <p className="font-semibold dark:text-white">4,689 | $45,627.00</p>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm text-gray-500">Total products</p>
-              <p className="font-semibold">11,297 | $51,097.00</p>
+            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
+              <p className="text-sm text-gray-500 dark:text-gray-300">Total products</p>
+              <p className="font-semibold dark:text-white">11,297 | $51,097.00</p>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm text-gray-500">Total Earnings</p>
-              <p className="font-semibold">9,474 | $74,829.00</p>
+            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
+              <p className="text-sm text-gray-500 dark:text-gray-300">Total Earnings</p>
+              <p className="font-semibold dark:text-white">9,474 | $74,829.00</p>
             </div>
           </div>
         </div>

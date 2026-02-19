@@ -14,7 +14,7 @@ export default function SearchBar() {
             className="w-[100%] h-[100%] absolute top-0 left-0 bg-blue-300/30"
             onClick={() => setIsSearchbarOpen(false)}
         >
-            <div className='bg-white w-[40%] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] px-8 py-2 rounded-md'>
+            <div className='bg-white dark:bg-gray-300 w-[40%] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] px-8 py-2 rounded-md'>
                 <div className='flex justify-between items-center p-1 mb-6'>
                     <div className='flex gap-3 items-center'>
                         <Search size={16} />

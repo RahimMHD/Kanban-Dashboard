@@ -67,7 +67,7 @@ const InvoiceEdit = () => {
 
       {/* Main Content */}
       <div className="flex-1 gap-4 flex">
-        <div className="flex-1 bg-white">
+        <div className="flex-1 bg-white dark:bg-gray-800">
           <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-8">
             {/* Header */}
             <div className="flex justify-between items-start mb-8">
@@ -76,9 +76,9 @@ const InvoiceEdit = () => {
                   <div className="w-8 h-8 bg-primary rounded flex items-center justify-center text-white font-bold">
                     M
                   </div>
-                  <span className="text-xl font-bold">MATERIO</span>
+                  <span className="text-xl font-bold dark:text-white">MATERIO</span>
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-sm text-muted-foreground dark:text-white">
                   <p>Office 149, 450 South Brand Brooklyn</p>
                   <p>San Diego County, CA 91905, USA</p>
                   <p>+1 (123) 456 7891, +44 (876) 543 2198</p>
@@ -86,12 +86,12 @@ const InvoiceEdit = () => {
               </div>
               <div className="text-right space-y-4">
                 <div>
-                  <h1 className="text-2xl font-bold">Invoice</h1>
-                  <p className="text-muted-foreground">#{invoiceNumber}</p>
+                  <h1 className="text-2xl font-bold dark:text-white">Invoice</h1>
+                  <p className="text-muted-foreground dark:text-white">#{invoiceNumber}</p>
                 </div>
                 <div className="space-y-3">
                   <div>
-                    <label className="text-sm font-medium">Date Issued:</label>
+                    <label className="text-sm font-medium dark:text-white">Date Issued:</label>
                     <input 
                       value={dateIssued} 
                       onChange={(e) => setDateIssued(e.target.value)}
@@ -99,7 +99,7 @@ const InvoiceEdit = () => {
                     />
                   </div>
                   <div>
-                    <label className="text-sm font-medium">Date Due:</label>
+                    <label className="text-sm font-medium dark:text-white">Date Due:</label>
                     <input 
                       value={dateDue} 
                       onChange={(e) => setDateDue(e.target.value)}
@@ -113,7 +113,7 @@ const InvoiceEdit = () => {
             {/* Client Selection */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
-                <h3 className="font-semibold mb-4">Invoice To:</h3>
+                <h3 className="font-semibold mb-4 dark:text-white">Invoice To:</h3>
                 <select 
                   value={selectedClient} 
                   onChange={(e) => setSelectedClient(e.target.value)}
@@ -124,18 +124,18 @@ const InvoiceEdit = () => {
                   <option value="Tony Herrera">Tony Herrera</option>
                 </select>
                 
-                <div className="mt-4 p-4 bg-muted/50 rounded text-sm">
-                  <p className="font-medium">Jordan Stevenson</p>
-                  <p>Hall-Robbins PLC</p>
-                  <p>7777 Mendez Plains</p>
-                  <p>(616) 865-4180</p>
-                  <p>don85@johnson.com</p>
+                <div className="mt-4 p-4 bg-muted/50 rounded text-sm dark:text-white">
+                  <p className="font-medium dark:text-white">Jordan Stevenson</p>
+                  <p className="dark:text-white">Hall-Robbins PLC</p>
+                  <p className="dark:text-white">7777 Mendez Plains</p>
+                  <p className="dark:text-white">(616) 865-4180</p>
+                  <p className="dark:text-white">don85@johnson.com</p>
                 </div>
               </div>
               
               <div>
-                <h3 className="font-semibold mb-4">Bill To:</h3>
-                <div className="space-y-3 text-sm">
+                <h3 className="font-semibold mb-4 dark:text-white">Bill To:</h3>
+                <div className="space-y-3 text-sm dark:text-white">
                   <div className="flex justify-between">
                     <span>Total Due:</span>
                     <span>$12,110.55</span>
@@ -165,11 +165,11 @@ const InvoiceEdit = () => {
               <table className="w-full caption-bottom text-sm">
                 <thead className="[&_tr]:border-b">
                   <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Item</th>
-                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Cost</th>
-                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Hours</th>
-                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Price</th>
-                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0"></th>
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground dark:text-white">Item</th>
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground dark:text-white">Cost</th>
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground dark:text-white">Hours</th>
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground dark:text-white">Price</th>
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground dark:text-white"></th>
                   </tr>
                 </thead>
                 <tbody className="[&_tr:last-child]:border-0">
@@ -190,7 +190,7 @@ const InvoiceEdit = () => {
                           placeholder="Description"
                           value={item.description}
                           onChange={(e) => updateItem(item.id, 'description', e.target.value)}
-                          className="text-sm bg-[#eee] flex h-10 w-full rounded-md border border-input px-3 py-2 ring-offset-[#eee] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="text-sm bg-[#eee] flex h-10 w-full rounded-md border border-input px-3 py-2 placeholder:text-muted-foreground dark:text-white"
                         />
                       </td>
                       <td className="p-4 align-middle [&:has([role=checkbox])]:pr-0">
@@ -206,13 +206,13 @@ const InvoiceEdit = () => {
                           type="number"
                           value={item.hours}
                           onChange={(e) => updateItem(item.id, 'hours', Number(e.target.value))}
-                          className="bg-[#eee] flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-[#eee] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visual:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="bg-[#eee] flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-[#eee] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         />
                       </td>
                       <td className="p-4 align-middle [&:has([role=checkbox])]:pr-0">
                         <div className="space-y-2">
-                          <span className="font-medium">${item.price.toFixed(2)}</span>
-                          <div className="text-xs text-muted-foreground">
+                          <span className="font-medium dark:text-white">${item.price.toFixed(2)}</span>
+                          <div className="text-xs text-muted-foreground dark:text-white">
                             Discount: {item.discount}
                           </div>
                         </div>
@@ -243,19 +243,19 @@ const InvoiceEdit = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div className="space-y-4">
                 <div>
-                  <label className="text-sm font-medium">Salesperson:</label>
+                  <label className="text-sm font-medium dark:text-white">Salesperson:</label>
                   <input 
                     value={salesperson}
                     onChange={(e) => setSalesperson(e.target.value)}
-                    className="mt-1 bg-[#eee] flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-[#eee] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="mt-1 bg-[#eee] flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm dark:text-white"
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium">Thanks:</label>
+                  <label className="text-sm font-medium dark:text-white">Thanks:</label>
                   <input 
                     value={thanks}
                     onChange={(e) => setThanks(e.target.value)}
-                    className="mt-1 bg-[#eee] flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-[#eee] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="mt-1 bg-[#eee] flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm dark:text-white"
                   />
                 </div>
               </div>
@@ -281,7 +281,7 @@ const InvoiceEdit = () => {
 
             {/* Note */}
             <div>
-              <label className="text-sm font-medium">Note:</label>
+              <label className="text-sm font-medium dark:text-white">Note:</label>
               <textarea 
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
@@ -293,10 +293,10 @@ const InvoiceEdit = () => {
         </div>
 
         {/* Right Sidebar */}
-        <div className="w-80 p-6 space-y-4 bg-sidebar-[#eee] border-l border-sidebar-border bg-white">
+        <div className="w-80 p-6 space-y-4 bg-sidebar-[#eee] border-l border-sidebar-border bg-white dark:bg-gray-800">
           <button className="w-full bg-primary hover:bg-primary/90 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-[#eee] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground h-11 rounded-md px-8">
             <Send className="h-4 w-4 mr-2" />
-            Send Invoice
+            <span className="dark:text-white">Send Invoice</span>
           </button>
           
           <Link 
@@ -316,7 +316,7 @@ const InvoiceEdit = () => {
           </button>
           
           <div className="p-4 border rounded bg-card">
-            <p className="text-sm text-muted-foreground mb-2">Accept payments via</p>
+            <p className="text-sm text-muted-foreground mb-2 dark:text-white">Accept payments via</p>
             <select className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-[#eee] px-3 py-2 text-sm ring-offset-[#eee] placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" defaultValue="internet-banking">
               <option value="internet-banking">Internet Banking</option>
               <option value="credit-card">Credit Card</option>

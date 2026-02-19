@@ -32,10 +32,10 @@ import InvoiceEdit from './sections/AllBarComponent/apps & pages/invoice/invoice
 import InvoicePreview from './sections/AllBarComponent/apps & pages/invoice/invoicePreview';
 
 
-
 const App: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState<boolean>(true);
   const [isResizing, setIsResizing] = useState<boolean>(false);
+
 
   useEffect(() => {
     window.innerWidth >= 1212 ? setIsResizing(false) : setIsResizing(true); 
@@ -51,10 +51,9 @@ const App: React.FC = () => {
           : setIsResizing(true);
     })
 
-
   return (
     <BrowserRouter>
-      <div className={`app w-[100%] ${isResizing ? "px-4" : "flex gap-5"} `}>
+      <div className={`app w-[100%] bg-[f3f4f6f2] dark:bg-black ${isResizing ? "px-4" : "flex gap-5"} `}>
         <SideBar 
           isExpand={handleExpandedFromChild}
           isResize={isResizing}

@@ -36,7 +36,7 @@ const getSalesIcon = (role: string|boolean) => {
     switch (role) {
         case true : return 'flex items-center gap-1 text-xs text-[#07c500]';
         case false : return 'flex items-center gap-1 text-xs text-[#f3341b]';
-        case "same" : return 'flex items-center gap-1 text-xs text-gray-600';
+        case "same" : return 'flex items-center gap-1 text-xs text-gray-600 dark:text-gray-300';
         default: return 'flex items-center gap-1 text-xs ';
     }
 }

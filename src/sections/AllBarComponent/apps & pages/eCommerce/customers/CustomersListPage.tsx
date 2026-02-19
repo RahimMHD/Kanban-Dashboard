@@ -85,50 +85,50 @@ const CustomersListPage = () => {
   ];
 
   return (
-    <div className="p-6 space-y-6 bg-white">
+    <div className="p-6 space-y-6 bg-white dark:bg-gray-800">
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-semibold">MATERIO</h1>
+          <h1 className="text-2xl font-semibold dark:text-white">MATERIO</h1>
           <div className="relative mt-2">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300" size={16} />
             <input 
               type="text" 
               placeholder="Search #K" 
-              className="pl-10 pr-4 py-2 bg-[#eee] border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 w-64"
+              className="pl-10 pr-4 py-2 bg-[#eee] border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 w-64 dark:text-white"
             />
           </div>
         </div>
       </div>
 
       {/* Search Header */}
-      <div className="bg-white p-6 rounded-xl shadow-sm">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
         <h2 className="font-semibold mb-4">Search</h2>
       </div>
 
       {/* Customers Table */}
-      <div className="bg-white p-6 rounded-xl shadow-sm">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="text-left text-gray-500 border-b">
+              <tr className="text-left text-gray-500 dark:text-gray-300 border-b">
                 <th className="pb-3 font-medium"></th>
-                <th className="pb-3 font-medium">CUSTOMERS</th>
-                <th className="pb-3 font-medium">CUSTOMER ID</th>
-                <th className="pb-3 font-medium">COUNTRY</th>
-                <th className="pb-3 font-medium">ORDERS</th>
-                <th className="pb-3 font-medium">TOTAL SPENT</th>
+                <th className="pb-3 font-medium dark:text-white">CUSTOMERS</th>
+                <th className="pb-3 font-medium dark:text-white">CUSTOMER ID</th>
+                <th className="pb-3 font-medium dark:text-white">COUNTRY</th>
+                <th className="pb-3 font-medium dark:text-white">ORDERS</th>
+                <th className="pb-3 font-medium dark:text-white">TOTAL SPENT</th>
               </tr>
             </thead>
             <tbody>
               {customers.map((customer, index) => (
-                <tr key={index} className="border-b last:border-0 hover:bg-gray-50">
+                <tr key={index} className="border-b last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700">
                   <td className="py-4">
                     <input type="checkbox" className="rounded" />
                   </td>
                   <td className="py-4">
-                    <div className="font-medium">{customer.name}</div>
-                    <div className="text-sm text-gray-500">{customer.email}</div>
+                    <div className="font-medium dark:text-white">{customer.name}</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-300">{customer.email}</div>
                   </td>
                   <td className="py-4">{customer.customerId}</td>
                   <td className="py-4">{customer.country}</td>

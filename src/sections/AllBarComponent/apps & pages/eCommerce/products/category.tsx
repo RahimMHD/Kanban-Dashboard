@@ -19,25 +19,25 @@ const CategoryPage = () => {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Left Sidebar - Filters */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h2 className="font-semibold mb-4">Filters</h2>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h2 className="font-semibold mb-4 dark:text-white">Filters</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-white mb-2">Status</label>
                 <select className="w-full p-2 bg-[#eee] border rounded-lg">
                   <option>Website Sales</option>
                 </select>
               </div>
               <div className="bg-blue-50 p-4 rounded-lg">
-                <p className="font-semibold">$74,347</p>
-                <p className="text-sm text-gray-600">21k orders</p>
+                <p className="font-semibold dark:text-white">$74,347</p>
+                <p className="text-sm text-gray-600 dark:text-white">21k orders</p>
                 <p className="text-sm text-green-600">12.4%</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h2 className="font-semibold mb-4">Category</h2>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h2 className="font-semibold mb-4 dark:text-white">Category</h2>
             <div className="space-y-2">
               <label className="flex items-center">
                 <input type="checkbox" className="mr-2" />
@@ -58,9 +58,9 @@ const CategoryPage = () => {
         {/* Main Content */}
         <div className="lg:col-span-3 space-y-6">
           {/* Products Table */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="font-semibold">PRODUCT</h2>
+              <h2 className="font-semibold dark:text-white">PRODUCT</h2>
               <div className="flex items-center space-x-4">
                 <button className="flex items-center px-4 py-2 bg-gray-100 rounded-lg">
                   <Download size={16} className="mr-2" />
@@ -76,7 +76,7 @@ const CategoryPage = () => {
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="text-left text-gray-500 border-b">
+                  <tr className="text-left text-gray-500 dark:text-white border-b">
                     <th className="pb-3 font-medium">PRODUCT</th>
                     <th className="pb-3 font-medium">CATEGORY</th>
                     <th className="pb-3 font-medium">STOCK</th>
@@ -88,16 +88,16 @@ const CategoryPage = () => {
                   {products.map((product) => (
                     <tr key={product.id} className="border-b last:border-0">
                       <td className="py-4">
-                        <div className="font-medium">{product.name}</div>
-                        <div className="text-sm text-gray-500">{product.description}</div>
+                        <div className="font-medium dark:text-white">{product.name}</div>
+                        <div className="text-sm text-gray-500 dark:text-white">{product.description}</div>
                       </td>
                       <td className="py-4">
-                        <span className="bg-gray-100 px-2 py-1 rounded text-sm">{product.category}</span>
+                        <span className="bg-gray-100 px-2 py-1 rounded text-sm dark:text-white">{product.category}</span>
                       </td>
-                      <td className="py-4">{product.stock}</td>
-                      <td className="py-4 font-medium">{product.price}</td>
+                      <td className="py-4 dark:text-white">{product.stock}</td>
+                      <td className="py-4 font-medium dark:text-white">{product.price}</td>
                       <td className="py-4">
-                        <button className="p-1 text-gray-400 hover:text-gray-600">
+                        <button className="p-1 text-gray-400 hover:text-gray-600 dark:text-white">
                           <ChevronDown size={16} />
                         </button>
                       </td>
@@ -109,8 +109,8 @@ const CategoryPage = () => {
 
             {/* Pagination */}
             <div className="flex justify-between items-center mt-6">
-              <span className="text-gray-500">Rows per page: 10 ▼</span>
-              <span className="text-gray-500">1-10 of 12</span>
+              <span className="text-gray-500 dark:text-white">Rows per page: 10 ▼</span>
+              <span className="text-gray-500 dark:text-white">1-10 of 12</span>
             </div>
           </div>
         </div>

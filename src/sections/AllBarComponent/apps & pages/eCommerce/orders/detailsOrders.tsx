@@ -66,11 +66,11 @@ const OrderDetailsPage = () => {
   ];
 
   return (
-    <div className="p-6 space-y-6 bg-gray-50">
+    <div className="p-6 space-y-6 bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-semibold">MATERIO</h1>
+          <h1 className="text-2xl font-semibold dark:text-white">MATERIO</h1>
           <div className="relative mt-2">
             <input 
               type="text" 
@@ -82,10 +82,10 @@ const OrderDetailsPage = () => {
       </div>
 
       {/* Order Header */}
-      <div className="bg-white p-6 rounded-xl shadow-sm">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
         <div className="flex justify-between items-start">
           <div>
-            <h2 className="text-xl font-semibold">Order #5434</h2>
+            <h2 className="text-xl font-semibold dark:text-white">Order #5434</h2>
             <div className="flex items-center space-x-4 mt-2">
               <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Delivered</span>
               <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Paid</span>
@@ -102,12 +102,12 @@ const OrderDetailsPage = () => {
         {/* Left Column - Order Details */}
         <div className="lg:col-span-2 space-y-6">
           {/* Order Items */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="font-semibold mb-4">Order Details</h3>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h3 className="font-semibold mb-4 dark:text-white">Order Details</h3>
             <table className="w-full">
               <thead>
-                <tr className="text-left text-gray-500 border-b">
-                  <th className="pb-3 font-medium">PRODUCT</th>
+                <tr className="text-left text-gray-500 dark:text-gray-300 border-b">
+                  <th className="pb-3 font-medium dark:text-white">PRODUCT</th>
                   <th className="pb-3 font-medium">PRICE</th>
                   <th className="pb-3 font-medium">QTY</th>
                   <th className="pb-3 font-medium text-right">TOTAL</th>
@@ -117,8 +117,8 @@ const OrderDetailsPage = () => {
                 {orderItems.map((item, index) => (
                   <tr key={index} className="border-b last:border-0">
                     <td className="py-4">
-                      <div className="font-medium">{item.product}</div>
-                      <div className="text-sm text-gray-500">{item.brand}</div>
+                      <div className="font-medium dark:text-white">{item.product}</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-300">{item.brand}</div>
                     </td>
                     <td className="py-4">{item.price}</td>
                     <td className="py-4">{item.quantity}</td>
@@ -148,8 +148,8 @@ const OrderDetailsPage = () => {
           </div>
 
           {/* Shipping Activity */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="font-semibold mb-4">Shipping Activity</h3>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h3 className="font-semibold mb-4 dark:text-white">Shipping Activity</h3>
             <div className="space-y-4">
               {shippingActivities.map((activity, index) => (
                 <div key={index} className="flex items-start">
@@ -171,8 +171,8 @@ const OrderDetailsPage = () => {
         {/* Right Column - Customer Details */}
         <div className="space-y-6">
           {/* Customer Details */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="font-semibold mb-4">Customer details</h3>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h3 className="font-semibold mb-4 dark:text-white">Customer details</h3>
             <div className="space-y-3">
               <div>
                 <p className="font-medium">Gabrielle Feyer</p>
@@ -187,8 +187,8 @@ const OrderDetailsPage = () => {
           </div>
 
           {/* Shipping Address */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="font-semibold mb-4">Shipping Address</h3>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h3 className="font-semibold mb-4 dark:text-white">Shipping Address</h3>
             <div className="flex items-start">
               <MapPin size={16} className="text-gray-400 mr-2 mt-0.5" />
               <div>
@@ -201,8 +201,8 @@ const OrderDetailsPage = () => {
           </div>
 
           {/* Billing Address */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="font-semibold mb-4">Billing Address</h3>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h3 className="font-semibold mb-4 dark:text-white">Billing Address</h3>
             <div className="flex items-start">
               <MapPin size={16} className="text-gray-400 mr-2 mt-0.5" />
               <div>

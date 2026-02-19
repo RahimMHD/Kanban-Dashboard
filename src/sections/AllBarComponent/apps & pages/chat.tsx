@@ -20,15 +20,15 @@ const Chat: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md max-w-6xl mx-auto">
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">MATERIO</h1>
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">MATERIO</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div className="md:col-span-1">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Dashboards</h2>
-          <ul className="text-gray-600 space-y-2">
+          <h2 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">Dashboards</h2>
+          <ul className="text-gray-600 dark:text-white space-y-2">
             {["Front Pages", "Apps & Pages", "eCommerce", "Academy", "Logistics", 
               "Email", "Chat", "Calendar", "Kanban", "Invoice", "User", "Roles & Permissions", "Pages"]
               .map((item) => (
@@ -53,8 +53,8 @@ const Chat: React.FC = () => {
               <div className="space-y-4">
                 {contacts.map((contact) => (
                   <div key={contact.id} className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer">
-                    <h4 className="font-medium text-gray-800">{contact.name}</h4>
-                    <p className="text-sm text-gray-600">{contact.message}</p>
+                    <h4 className="font-medium text-gray-800 dark:text-white">{contact.name}</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">{contact.message}</p>
                   </div>
                 ))}
               </div>
