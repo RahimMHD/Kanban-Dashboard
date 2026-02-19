@@ -30,15 +30,15 @@ const Email: React.FC = () => {
   const labels = ["Private", "Company", "Important", "Personal"];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md max-w-6xl mx-auto">
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">MATERIO</h1>
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">MATERIO</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div className="md:col-span-1">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Dashboards</h2>
-          <ul className="text-gray-600 space-y-2 mb-6">
+          <h2 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">Dashboards</h2>
+          <ul className="text-gray-600 dark:text-white space-y-2 mb-6">
             {["Front Pages", "Apps & Pages", "eCommerce", "Academy", "Logistics", 
               "Email", "Chat", "Calendar", "Kanban", "Invoice", "User", "Roles & Permissions"]
               .map((item) => (
@@ -46,7 +46,7 @@ const Email: React.FC = () => {
               ))}
           </ul>
 
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Image</h2>
+          <h2 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">Image</h2>
           <ul className="space-y-2 mb-6">
             {folders.map((folder) => (
               <li key={folder.name} className="flex items-center">
@@ -56,15 +56,15 @@ const Email: React.FC = () => {
                   readOnly
                   className="mr-2 h-4 w-4 text-blue-600 rounded"
                 />
-                <span className="text-gray-600">{folder.name}</span>
+                <span className="text-gray-600 dark:text-white">{folder.name}</span>
               </li>
             ))}
           </ul>
 
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Labels</h2>
+          <h2 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">Labels</h2>
           <ul className="space-y-2">
             {labels.map((label) => (
-              <li key={label} className="text-gray-600 hover:text-blue-600 cursor-pointer">
+              <li key={label} className="text-gray-600 dark:text-white hover:text-blue-600 cursor-pointer">
                 {label}
               </li>
             ))}
@@ -73,7 +73,7 @@ const Email: React.FC = () => {
 
         <div className="md:col-span-3">
           <div className="mb-4">
-            <h2 className="text-lg font-semibold text-gray-700 mb-2">Search mail</h2>
+            <h2 className="text-lg font-semibold text-gray-700 dark:text-white mb-2">Search mail</h2>
             <input 
               type="text" 
               placeholder="Search mail"
@@ -94,8 +94,8 @@ const Email: React.FC = () => {
                     className="mr-3 mt-1 h-4 w-4 text-blue-600 rounded"
                   />
                   <div className="flex-1">
-                    <h3 className="font-medium text-gray-800">{email.sender}</h3>
-                    <p className="text-gray-600">{email.subject}</p>
+                    <h3 className="font-medium text-gray-800 dark:text-white">{email.sender}</h3>
+                    <p className="text-gray-600 dark:text-gray-300">{email.subject}</p>
                   </div>
                 </div>
               </div>
@@ -111,7 +111,7 @@ const Email: React.FC = () => {
         </div>
       </div>
 
-      <footer className="mt-12 pt-6 border-t border-gray-200 text-center text-gray-500">
+      <footer className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700 text-center text-gray-500 dark:text-gray-300">
         <p>© 2025, Made with by ThemeSelection</p>
         <div className="flex justify-center space-x-4 mt-2 text-sm">
           <a href="#" className="text-gray-500 hover:text-gray-700">License</a>

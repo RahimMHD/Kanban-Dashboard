@@ -33,7 +33,7 @@ const SidebarItem = React.memo(({ item, path, activePath, depth = 0, setActivePa
                 onClick={handleClick}
                 className={`
                     flex items-center w-full p-2 cursor-pointer  ${isExpanded ? "rounded-r-xl justify-between" : "rounded-xl justify-center"}
-                    ${isOpen && hasChildren ? "bg-gray-300 text-black" : ""}
+                    ${isOpen && hasChildren ? "bg-gray-300 text-black dark:bg-gray-500 dark:text-white" : ""}
                     ${isActiveLeaf
                         ? hasChildren
                             ? "bg-gray-300 text-black"

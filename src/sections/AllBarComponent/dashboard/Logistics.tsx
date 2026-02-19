@@ -68,7 +68,7 @@ const LogisticsDashboard = () => {
         {vehicleData.map((item, index) => (
           <div 
             key={index}
-            className={`bg-white p-6 rounded-xl shadow-sm border-b-4 cursor-pointer transition-all duration-200 ${
+            className={`bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border-b-4 cursor-pointer transition-all duration-200 ${
               activeTab === item.status.toLowerCase().replace(' ', '-') 
                 ? 'border-primary' 
                 : 'border-transparent hover:border-gray-300'
@@ -77,9 +77,9 @@ const LogisticsDashboard = () => {
           >
             <div className="flex justify-between items-center">
               <div>
-                <p className="text-gray-500">{item.status}</p>
-                <h3 className="text-2xl font-semibold mt-1">{item.value}%</h3>
-                <p className="text-gray-500 text-sm mt-1">{item.time}</p>
+                <p className="text-gray-500 dark:text-white">{item.status}</p>
+                <h3 className="text-2xl font-semibold dark:text-white mt-1">{item.value}%</h3>
+                <p className="text-gray-500 dark:text-white text-sm mt-1">{item.time}</p>
               </div>
               <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: `${item.color}20` }}>
                 <Truck size={24} style={{ color: item.color }} />
@@ -92,11 +92,11 @@ const LogisticsDashboard = () => {
       {/* Second Row - Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Shipment Statistics */}
-        <div className="bg-white p-6 rounded-xl shadow-sm">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
           <div className="flex justify-between items-center mb-6">
             <div>
-              <h3 className="font-semibold">Shipment Statistics</h3>
-              <p className="text-gray-500">Total number of deliveries 23.8k</p>
+              <h3 className="font-semibold dark:text-white">Shipment Statistics</h3>
+              <p className="text-gray-500 dark:text-white">Total number of deliveries 23.8k</p>
             </div>
             <div className="flex gap-2">
               <button className="px-3 py-1 bg-primary text-white rounded-lg text-sm">Shipment</button>
@@ -117,18 +117,18 @@ const LogisticsDashboard = () => {
         </div>
 
         {/* Delivery Performance */}
-        <div className="bg-white p-6 rounded-xl shadow-sm">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
           <div className="flex justify-between items-center mb-6">
             <div>
-              <h3 className="font-semibold">Delivery Performance</h3>
-              <p className="text-gray-500">12% increase in this month</p>
+              <h3 className="font-semibold dark:text-white">Delivery Performance</h3>
+              <p className="text-gray-500 dark:text-white">12% increase in this month</p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             {performanceData.map((item, index) => (
-              <div key={index} className="p-3 bg-gray-50 rounded-lg">
-                <p className="text-gray-500 text-sm">{item.metric}</p>
-                <p className="font-semibold mt-1">{item.value}</p>
+              <div key={index} className="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <p className="text-gray-500 dark:text-white text-sm">{item.metric}</p>
+                <p className="font-semibold dark:text-white mt-1">{item.value}</p>
               </div>
             ))}
           </div>
@@ -138,30 +138,30 @@ const LogisticsDashboard = () => {
       {/* Third Row - 3 Columns */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Delivery Exceptions */}
-        <div className="bg-white p-6 rounded-xl shadow-sm">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="font-semibold">Delivery exceptions</h3>
+            <h3 className="font-semibold dark:text-white">Delivery exceptions</h3>
           </div>
           <div className="text-center mb-6">
             <div className="text-3xl font-bold text-primary">30%</div>
-            <p className="text-gray-500">AVG. Exceptions</p>
+            <p className="text-gray-500 dark:text-white">AVG. Exceptions</p>
           </div>
           <div className="space-y-3">
             {exceptionData.map((item, index) => (
               <div key={index} className="flex items-center">
                 <div className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: item.color }} />
-                <span className="text-sm">{item.reason}</span>
+                <span className="text-sm dark:text-white">{item.reason}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Orders by Countries */}
-        <div className="bg-white p-6 rounded-xl shadow-sm">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
           <div className="flex justify-between items-center mb-6">
             <div>
-              <h3 className="font-semibold">Orders by Countries</h3>
-              <p className="text-gray-500">62 deliveries in progress</p>
+              <h3 className="font-semibold dark:text-white">Orders by Countries</h3>
+              <p className="text-gray-500 dark:text-white">62 deliveries in progress</p>
             </div>
             <div className="flex gap-2">
               <button className="px-3 py-1 bg-gray-100 rounded-lg text-sm">New</button>
@@ -173,22 +173,22 @@ const LogisticsDashboard = () => {
             {ordersData.map((order, index) => (
               <div key={index} className="p-3 border rounded-lg">
                 <div className="flex justify-between items-start mb-2">
-                  <span className="text-sm font-medium text-gray-500">SENDER</span>
-                  <span className="text-sm font-medium">{order.sender}</span>
+                  <span className="text-sm font-medium text-gray-500 dark:text-white">SENDER</span>
+                  <span className="text-sm font-medium dark:text-white">{order.sender}</span>
                 </div>
                 <div className="flex justify-between items-start mb-2">
-                  <span className="text-sm font-medium text-gray-500">RECEVER</span>
-                  <span className="text-sm font-medium">{order.receiver}</span>
+                  <span className="text-sm font-medium text-gray-500 dark:text-white">RECEVER</span>
+                  <span className="text-sm font-medium dark:text-white">{order.receiver}</span>
                 </div>
-                <p className="text-xs text-gray-500">{order.address}</p>
+                <p className="text-xs text-gray-500 dark:text-white">{order.address}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Empty Column for spacing */}
-        <div className="bg-white p-6 rounded-xl shadow-sm">
-          <h3 className="font-semibold mb-4">Additional Info</h3>
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+          <h3 className="font-semibold dark:text-white mb-4">Additional Info</h3>
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-gray-500">Total Vehicles</span>
@@ -207,27 +207,27 @@ const LogisticsDashboard = () => {
       </div>
 
       {/* Fourth Row - On Route Vehicles Table */}
-      <div className="bg-white p-6 rounded-xl shadow-sm">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
         <div className="flex justify-between items-center mb-6">
-          <h3 className="font-semibold">On route vehicles</h3>
+          <h3 className="font-semibold dark:text-white">On route vehicles</h3>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr className="text-left text-gray-500 border-b">
-                <th className="pb-3 font-medium">LOCATION</th>
-                <th className="pb-3 font-medium">STARTING ROUTE</th>
-                <th className="pb-3 font-medium">ENDING ROUTE</th>
-                <th className="pb-3 font-medium">WARNINGS</th>
-                <th className="pb-3 font-medium">PROGRESS</th>
+                <th className="pb-3 font-medium dark:text-white">LOCATION</th>
+                <th className="pb-3 font-medium dark:text-white">STARTING ROUTE</th>
+                <th className="pb-3 font-medium dark:text-white">ENDING ROUTE</th>
+                <th className="pb-3 font-medium dark:text-white">WARNINGS</th>
+                <th className="pb-3 font-medium dark:text-white">PROGRESS</th>
               </tr>
             </thead>
             <tbody>
               {vehiclesData.map((vehicle, index) => (
                 <tr key={index} className="border-b last:border-0">
-                  <td className="py-2 font-medium flex items-center gap-x-2"><CarFront size={29} className='bg-gray-300 rounded-full' />{vehicle.id}</td>
-                  <td className="py-2">{vehicle.start}</td>
-                  <td className="py-2">{vehicle.end}</td>
+                  <td className="py-2 font-medium flex items-center gap-x-2 dark:text-white"><CarFront size={29} className='bg-gray-300 rounded-full' />{vehicle.id}</td>
+                  <td className="py-2 dark:text-white">{vehicle.start}</td>
+                  <td className="py-2 dark:text-white">{vehicle.end}</td>
                   <td className="py-2">
                     <div className="flex items-center">
                       <AlertCircle size={16} className="text-warning mr-2" />
@@ -251,8 +251,8 @@ const LogisticsDashboard = () => {
           </table>
         </div>
         <div className="flex justify-between items-center mt-4">
-          <span className="text-gray-500">Rows per page: 5</span>
-            <span className="text-gray-500 flex items-center gap-2">
+          <span className="text-gray-500 dark:text-white">Rows per page: 5</span>
+            <span className="text-gray-500 dark:text-white flex items-center gap-2">
                 <button className='text-gray-500 font-semibold text-lg hover:scale-150 hover:text-[#0A6CD5] transition-all duration-200'>{"<"}</button>
                 1-5 of 25
                 <button className='text-gray-500 font-semibold text-lg hover:scale-150 hover:text-[#0A6CD5] transition-all duration-200'>{">"}</button>

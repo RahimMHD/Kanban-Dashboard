@@ -25,11 +25,11 @@ const CustomerDetailsPage = () => {
   };
 
   return (
-    <div className="p-6 space-y-6 bg-gray-50">
+    <div className="p-6 space-y-6 bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-semibold">MATERIO</h1>
+          <h1 className="text-2xl font-semibold dark:text-white">MATERIO</h1>
           <div className="relative mt-2">
             <input 
               type="text" 
@@ -41,11 +41,11 @@ const CustomerDetailsPage = () => {
       </div>
 
       {/* Customer Header */}
-      <div className="bg-white p-6 rounded-xl shadow-sm">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
         <div className="flex justify-between items-start">
           <div>
-            <h2 className="text-xl font-semibold">Customer ID #879861</h2>
-            <div className="flex items-center mt-2 text-gray-500">
+            <h2 className="text-xl font-semibold dark:text-white">Customer ID #879861</h2>
+            <div className="flex items-center mt-2 text-gray-500 dark:text-gray-300">
               <Calendar size={16} className="mr-2" />
               <span>Aug 17, 2020, 5:48 (ET)</span>
             </div>
@@ -57,9 +57,9 @@ const CustomerDetailsPage = () => {
         {/* Left Column - Customer Info */}
         <div className="lg:col-span-2 space-y-6">
           {/* Customer Details */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="font-semibold mb-4">Stenfield Baser</h3>
-            <p className="text-gray-500 mb-4">Customer ID #879861</p>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h3 className="font-semibold mb-4 dark:text-white">Stenfield Baser</h3>
+            <p className="text-gray-500 dark:text-gray-300 mb-4">Customer ID #879861</p>
             
             <div className="grid grid-cols-2 gap-4 mb-6">
               <div>
@@ -90,8 +90,8 @@ const CustomerDetailsPage = () => {
           </div>
 
           {/* Orders Table */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="font-semibold mb-4">Orders Placed</h3>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h3 className="font-semibold mb-4 dark:text-white">Orders Placed</h3>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
@@ -106,8 +106,8 @@ const CustomerDetailsPage = () => {
                   {orders.map((order, index) => (
                     <tr key={index} className="border-b last:border-0">
                       <td className="py-4">
-                        <div className="font-medium">{order.id}</div>
-                        <div className="text-sm text-gray-500">{order.date}</div>
+                        <div className="font-medium dark:text-white">{order.id}</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-300">{order.date}</div>
                       </td>
                       <td className="py-4">
                         <span className={`px-2 py-1 rounded-full text-xs ${getStatusColor(order.status)}`}>
@@ -134,8 +134,8 @@ const CustomerDetailsPage = () => {
         {/* Right Column - Sidebar */}
         <div className="space-y-6">
           {/* Upgrade Card */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="font-semibold mb-4">Upgrade to premium</h3>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h3 className="font-semibold mb-4 dark:text-white">Upgrade to premium</h3>
             <p className="text-gray-500 mb-4">
               Upgrade customer to premium membership to access pro features.
             </p>
@@ -145,7 +145,7 @@ const CustomerDetailsPage = () => {
           </div>
 
           {/* Account Balance */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
             <h3 className="font-semibold mb-4">Account Balance</h3>
             <p className="text-2xl font-bold text-primary mb-2">$7480</p>
             <p className="text-gray-500">Credit Left</p>
@@ -153,7 +153,7 @@ const CustomerDetailsPage = () => {
           </div>
 
           {/* Wishlist */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
             <h3 className="font-semibold mb-4">Wishlist</h3>
             <p className="text-2xl font-bold mb-2">15</p>
             <p className="text-gray-500">Items in wishlist</p>
@@ -161,7 +161,7 @@ const CustomerDetailsPage = () => {
           </div>
 
           {/* Overview */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
             <h3 className="font-semibold mb-4">Overview</h3>
             <div className="space-y-2">
               <p className="text-sm text-gray-600">Security</p>

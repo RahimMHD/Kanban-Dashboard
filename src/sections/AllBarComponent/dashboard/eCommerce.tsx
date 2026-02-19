@@ -1,22 +1,21 @@
-
 import { ArrowUp, ArrowDown, ShoppingCart, Users, DollarSign, CreditCard, Package, TrendingUp, Calendar, ChevronDown, Circle, EllipsisVertical, Clock, CircleDollarSign, FolderCheck, BanknoteXIcon, Wallet, ChevronUp, Warehouse, FileBarChart, MessageSquare, Check, X } from 'lucide-react';
 import { BarEcomProfit, EcommerceBarChart, RevenueChart, VisitorsBar } from './data & fun dash/barChartDah';
-import { percent } from 'framer-motion';
-import { div } from 'framer-motion/m';
+// import { percent } from 'framer-motion';
+// import { div } from 'framer-motion/m';
 
 export const EcommerceDashboard = () => {
     
     return (
-        <div className="grid pt-6 gap-6">
+        <div className="grid pt-6 gap-6 dark:text-white">
 
         {/* Stats Cards */}
         {/* First Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
             <div className='lg:col-span-4 rounded-lg flex shadow-sm relative'>
-                <div className='w-full h-[85%] bg-white p-4 absolute z-0 bottom-0 rounded-lg'>
+                <div className='w-full h-[85%] bg-white dark:bg-gray-800 p-4 absolute z-0 bottom-0 rounded-lg'>
                     <div className='w-[50%] h-[80%]'>
-                        <h2 className='text-2xl font-bold mb-4'>Congratulations John! 🎉</h2>
-                        <p>You have done 72% 😎 more sales today. Check your new raising badge in your profile.</p>
+                        <h2 className='text-2xl font-bold mb-4 dark:text-white'>Congratulations John! 🎉</h2>
+                        <p className='dark:text-white'>You have done 72% 😎 more sales today. Check your new raising badge in your profile.</p>
                     </div>
                 </div>
                 <img 
@@ -27,43 +26,43 @@ export const EcommerceDashboard = () => {
             </div>
             
             {/* Total Sales */}
-            <div className="lg:col-span-1 bg-white p-4 rounded-xl shadow-sm relative">
-                <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
+            <div className="lg:col-span-1 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm relative">
+                <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 dark:text-white cursor-pointer hover:scale-[1.1]"/>
                 <div className="mb-2 bg-[#07c500] w-10 h-10 flex justify-center items-center rounded-full">
                     <DollarSign className="text-white bg-[#07c500]" size={20} />
                 </div>
-                <p className="text-gray-500">Revenue</p>
-                <h3 className="text-2xl font-semibold my-1">
+                <p className="text-gray-500 dark:text-white">Revenue</p>
+                <h3 className="text-2xl font-semibold my-1 dark:text-white">
                     $95k 
                     <span className='text-[#07c500] text-sm'>+12%</span>
                 </h3>
-                <span className="text-gray-500 text-sm">Revenue Increase</span>
+                <span className="text-gray-500 dark:text-white text-sm">Revenue Increase</span>
                 
             </div>
             
 
             {/* Total Revenue */}
-            <div className="lg:col-span-1 bg-white p-4 rounded-xl shadow-sm relative">
-                <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
+            <div className="lg:col-span-1 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm relative">
+                <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 dark:text-white cursor-pointer hover:scale-[1.1]"/>
                 <div className="mb-2 bg-[#0A6CD5] w-10 h-10 flex justify-center items-center rounded-lg">
                     <CreditCard className="text-white" size={20} />
                 </div>
-                <p className="text-gray-500">Transaction</p>
-                <h3 className="flex text-2xl items-baseline font-semibold my-1">48,2k
+                <p className="text-gray-500 dark:text-white">Transaction</p>
+                <h3 className="flex text-2xl items-baseline font-semibold my-1 dark:text-white">48,2k
                     <span className="text-[#f3341b] text-sm"> -18%</span>
                 </h3>
-                <span className="text-gray-500 text-sm">Daily Transaction</span> 
+                <span className="text-gray-500 dark:text-white text-sm">Daily Transaction</span> 
             </div>
         </div>
 
         {/* Charts Row */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Sales Overview */}
-            <div className="bg-white p-5 rounded-xl shadow-sm lg:col-span-2 flex gap-3">
+            <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm lg:col-span-2 flex gap-3">
                 <div className="w-full">
                     <div>
-                        <h3 className="font-semibold">Total Profit</h3>
-                        <p className="text-gray-500">Yearly overview</p>
+                        <h3 className="font-semibold dark:text-white">Total Profit</h3>
+                        <p className="text-gray-500 dark:text-white">Yearly overview</p>
                     </div>
                     <div className='w-full h-full mt-4'>
                         <BarEcomProfit />
@@ -74,8 +73,8 @@ export const EcommerceDashboard = () => {
 
                 <div className='w-full h-full flex flex-col'>
                     <div className='mb-4'>
-                        <h2 className='text-xl font-semibold'>$482.85k</h2>
-                        <p className='text-gray-500'>Last month balance $234.40k</p>
+                        <h2 className='text-xl font-semibold dark:text-white'>$482.85k</h2>
+                        <p className='text-gray-500 dark:text-white'>Last month balance $234.40k</p>
                     </div>
                     <div className='space-y-4'>
                         <div className='flex items-center gap-3'>
@@ -83,8 +82,8 @@ export const EcommerceDashboard = () => {
                                 <Clock size={21} className="text-[#07c500] font-bold " />
                             </div>
                             <div>
-                                <h3 className='text-lg font-semibold'>$48,568.20</h3>
-                                <p>Total Profit</p>
+                                <h3 className='text-lg font-semibold dark:text-white'>$48,568.20</h3>
+                                <p className='dark:text-white'>Total Profit</p>
                             </div>
                         </div>
                         <div className='flex items-center gap-3'>
@@ -92,8 +91,8 @@ export const EcommerceDashboard = () => {
                                 <CircleDollarSign size={21} className="text-[#f3341b] font-bold " />
                             </div>
                             <div>
-                                <h3 className='text-lg font-semibold'>$12,568.20</h3>
-                                <p>Total Loss</p>
+                                <h3 className='text-lg font-semibold dark:text-white'>$12,568.20</h3>
+                                <p className='dark:text-white'>Total Loss</p>
                             </div>
                         </div>
                         <div className='flex items-center gap-3'>
@@ -101,8 +100,8 @@ export const EcommerceDashboard = () => {
                                 <FolderCheck size={21} className="text-[#0A6CD5] font-bold " />
                             </div>
                             <div>
-                                <h3 className='text-lg font-semibold'>$36,000.00</h3>
-                                <p>Total Revenue</p>
+                                <h3 className='text-lg font-semibold dark:text-white'>$36,000.00</h3>
+                                <p className='dark:text-white'>Total Revenue</p>
                             </div>
                         </div>
                     </div>
@@ -114,12 +113,12 @@ export const EcommerceDashboard = () => {
 
             {/* Revenue Report */}
             <div className='lg:col-span-1 rounded-xl shadow-sm flex flex-col gap-5'>
-                <div className="bg-white p-6 rounded-xl shadow-sm flex justify-between items-center">
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm flex justify-between items-center">
                     <div className=''>
-                        <h3 className="font-semibold text-xl">Total Sales</h3>
-                        <p className="text-gray-500 my-2">Calculated in Last 7 days</p>
+                        <h3 className="font-semibold text-xl dark:text-white">Total Sales</h3>
+                        <p className="text-gray-500 my-2 dark:text-white">Calculated in Last 7 days</p>
                         <div className="flex items-baseline gap-2">
-                            <h2 className='text-2xl font-bold'>$25,980</h2>
+                            <h2 className='text-2xl font-bold dark:text-white'>$25,980</h2>
                             <span className="flex items-baseline text-sm font-medium text-[#07c500]"><ArrowUp size={14}/> 12.6%</span>
                         </div>
                     </div>
@@ -129,20 +128,20 @@ export const EcommerceDashboard = () => {
                 </div>
 
                 <div className='lg:col-span-1 rounded-xl shadow-sm flex justify-between items-center gap-4'>
-                    <div className="w-[47%] h-full bg-white p-4 space-y-3 rounded-xl shadow-sm">
-                        <h2 className='text-xl font-semibold'>$35.4k</h2>
+                    <div className="w-[47%] h-full bg-white dark:bg-gray-800 p-4 space-y-3 rounded-xl shadow-sm">
+                        <h2 className='text-xl font-semibold dark:text-white'>$35.4k</h2>
                         <div className='w-full h-20'>
                             <RevenueChart />
                         </div>
-                        <p className='text-center text-lg '>Total Revenue</p>
+                        <p className='text-center text-lg dark:text-white'>Total Revenue</p>
                     </div>
                     
-                    <div className="w-[47%] h-full bg-white p-4 space-y-3 rounded-xl shadow-sm">
-                        <h2 className='text-xl text-center font-semibold'>135k</h2>
+                    <div className="w-[47%] h-full bg-white dark:bg-gray-800 p-4 space-y-3 rounded-xl shadow-sm">
+                        <h2 className='text-xl text-center font-semibold dark:text-white'>135k</h2>
                         <div className='w-full h-20 flex items-center justify-center bg-[#42b1fb40] rounded-full'>
                             <p className='text-3xl font-bold'>75%</p>
                         </div>
-                        <p className='text-center text-lg '>Total Sales</p>
+                        <p className='text-center text-lg dark:text-white'>Total Sales</p>
                     </div>
                 </div>
             </div>
@@ -150,10 +149,10 @@ export const EcommerceDashboard = () => {
 
         {/* third row */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-            <div className='bg-white p-6 rounded-xl shadow-sm flex flex-col gap-4 relative'>
-                <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
+            <div className='bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm flex flex-col gap-4 relative'>
+                <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 dark:text-white cursor-pointer hover:scale-[1.1]"/>
                 <div>
-                    <h2 className='text-xl font-semibold'>Transactions</h2>
+                    <h2 className='text-xl font-semibold dark:text-white'>Transactions</h2>
                 </div>
                 <div className='flex flex-col'>
                     {[
@@ -169,12 +168,12 @@ export const EcommerceDashboard = () => {
                                     {transaction.icon}
                                 </div>
                                 <div className='flex flex-col'>
-                                    <h3>{transaction.title}</h3>
-                                    <p>{transaction.description}</p>
+                                    <h3 className='dark:text-white'>{transaction.title}</h3>
+                                    <p className='dark:text-white'>{transaction.description}</p>
                                 </div>
                             </div>
                             <div className='flex items-center gap-1'>
-                                <h4 className={`text-lg font-semibold`}>{transaction.amount}</h4>
+                                <h4 className={`text-lg font-semibold dark:text-white`}>{transaction.amount}</h4>
                                 {transaction.change}
                             </div>
                         </div>
@@ -185,39 +184,39 @@ export const EcommerceDashboard = () => {
             {/* second column */}
             <div className='flex flex-col gap-5'>
                 <div className='flex gap-4'>
-                    <div className='bg-white p-4 rounded-xl shadow-sm flex flex-col relative w-full'>
-                        <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
+                    <div className='bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm flex flex-col relative w-full'>
+                        <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 dark:text-white cursor-pointer hover:scale-[1.1]"/>
                         <div className='flex items-center justify-center my-2 w-12 h-12 bg-[#07c500] rounded-full'>
                             <Warehouse size={22} className="text-white font-bold" />
                         </div>
-                        <h3 className='text-lg font-semibold '>Logistics</h3>
+                        <h3 className='text-lg font-semibold dark:text-white'>Logistics</h3>
                         <div className='flex items-center gap-1'>
-                            <h2 className='text-2xl font-bold my-2'>$44k </h2>
+                            <h2 className='text-2xl font-bold my-2 dark:text-white'>$44k </h2>
                             <p className='text-[#07c500] font-semibold text-md'>+42%</p>
                         </div>
-                        <p className='mb-2'>Revenue Increase</p>
+                        <p className='mb-2 dark:text-white'>Revenue Increase</p>
                     </div>
 
-                    <div className='bg-white p-4 rounded-xl shadow-sm flex flex-col relative w-full'>
-                        <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
+                    <div className='bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm flex flex-col relative w-full'>
+                        <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 dark:text-white cursor-pointer hover:scale-[1.1]"/>
                         <div className='flex items-center justify-center my-2 w-12 h-12 bg-[#ee9004] rounded-full'>
                             <FileBarChart size={22} className="text-white font-bold" />
                         </div>
-                        <h3 className='text-lg font-semibold '>Reports</h3>
+                        <h3 className='text-lg font-semibold dark:text-white'>Reports</h3>
                         <div className='flex items-center gap-1'>
-                            <h2 className='text-2xl font-bold my-2'>268</h2>
+                            <h2 className='text-2xl font-bold my-2 dark:text-white'>268</h2>
                             <p className='text-[#f3341b] font-semibold text-md'>-28%</p>
                         </div>
-                        <p className='mb-2'>System Bugs</p>
+                        <p className='mb-2 dark:text-white'>System Bugs</p>
                     </div>
                 </div>
 
-                <div className='bg-white p-4 rounded-xl shadow-sm flex gap-4 h-full'>
+                <div className='bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm flex gap-4 h-full'>
                     <div className=''>
-                        <h2 className='text-xl font-bold mb-4'>New Visitors</h2>
-                        <p className='text-lg font-semibold text-gray-500 my-3'>48% new visitors this week.</p>
+                        <h2 className='text-xl font-bold mb-4 dark:text-white'>New Visitors</h2>
+                        <p className='text-lg font-semibold text-gray-500 my-3 dark:text-white'>48% new visitors this week.</p>
                         <div className='flex items-center gap-1'>
-                            <h1 className='text-2xl font-bold'>12.480</h1>
+                            <h1 className='text-2xl font-bold dark:text-white'>12.480</h1>
                             <ChevronUp size={18} className='text-[#07c500]' />
                             <p className='text-[#07c500]'>28</p>
                         </div>
@@ -229,13 +228,13 @@ export const EcommerceDashboard = () => {
             </div>
 
             {/* third column */}
-            <div className='bg-white p-6 rounded-xl shadow-sm flex flex-col relative'>
-                <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
-                <h2 className='text-xl font-semibold mb-4'>Website Statistics</h2>
+            <div className='bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm flex flex-col relative'>
+                <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 dark:text-white cursor-pointer hover:scale-[1.1]"/>
+                <h2 className='text-xl font-semibold mb-4 dark:text-white'>Website Statistics</h2>
                 <div className='flex items-center justify-between h-[35%] gap-4 mb-3'>
                     <div className='flex flex-col gap-2'>
-                        <h1 className='text-6xl font-semibold'>4,590</h1>
-                        <p>Total Traffic</p>
+                        <h1 className='text-6xl font-semibold dark:text-white'>4,590</h1>
+                        <p className='dark:text-white'>Total Traffic</p>
                     </div>
                     <div className='w-full h-full'>
                         <VisitorsBar />
@@ -251,11 +250,11 @@ export const EcommerceDashboard = () => {
                         <div key={index} className='flex justify-between items-center mt-3'>
                             <div className='flex items-center gap-2'>
                                 {stat.icon}
-                                <span>{stat.label}</span>
+                                <span className='dark:text-white'>{stat.label}</span>
                             </div>
-                            <p>{stat.value}</p>
+                            <p className='dark:text-white'>{stat.value}</p>
                             <div className='flex items-center gap-2'>
-                                <span className='ml-auto'>{stat.percent}</span>
+                                <span className='ml-auto dark:text-white'>{stat.percent}</span>
                                 {stat.status ? <ChevronUp size={18} className='text-[#07c500] font-bold' /> : <ChevronDown size={18} className='text-[#f3341b]' />}
                             </div>
                         </div>
@@ -268,16 +267,16 @@ export const EcommerceDashboard = () => {
         {/* Bottom Row */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Recent Orders */}
-            <div className="bg-white p-6 rounded-xl shadow-sm col-span-2">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm col-span-2">
                 <div className="overflow-x-auto">
                     <table className="w-full">
                         <thead>
                             <tr className="text-left text-gray-500 text-sm border-b">
-                            <th className="text-md font-semibold pb-3">#ID</th>
-                            <th className="text-md font-semibold pb-3">STATUS</th>
-                            <th className="text-md font-semibold pb-3">CLIENT</th>
-                            <th className="text-md font-semibold pb-3 text-right">TOTAL</th>
-                            <th className="text-md font-semibold pb-3 text-right">BALANCE</th>
+                            <th className="text-md font-semibold pb-3 dark:text-white">#ID</th>
+                            <th className="text-md font-semibold pb-3 dark:text-white">STATUS</th>
+                            <th className="text-md font-semibold pb-3 dark:text-white">CLIENT</th>
+                            <th className="text-md font-semibold pb-3 text-right dark:text-white">TOTAL</th>
+                            <th className="text-md font-semibold pb-3 text-right dark:text-white">BALANCE</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -291,7 +290,7 @@ export const EcommerceDashboard = () => {
                             { id: "#7547", date: "Christina Collier",img: "../../../../public/images/avatars/2.png" , status: "Completed", amount: "Paid", balance: "$937", email: "williamshenry@moon-smith.com" },
                             ].map((order, index) => (
                             <tr key={index} className="border-b last:border-0">
-                                <td className="py-4 font-medium">{order.id}</td>
+                                <td className="py-4 font-medium dark:text-white">{order.id}</td>
                                 <td className="p-4 text-center">
                                     {order.status === "Completed" ? 
                                         <div className='flex items-center justify-center rounded-3xl w-8 h-8 bg-[#07c50050] gap-2'>
@@ -313,12 +312,12 @@ export const EcommerceDashboard = () => {
                                         <img src={order.img} alt="client User" />
                                     </div>
                                     <div className='flex flex-col'>
-                                        <td className="text-lg font-semibold">{order.date}</td>
-                                        <td className='text-gray-500 font-semibold'>{order.email}</td>
+                                        <td className="text-lg font-semibold dark:text-white">{order.date}</td>
+                                        <td className='text-gray-500 font-semibold dark:text-white'>{order.email}</td>
                                     </div>
                                 </td>
                                 <td className="py-4 text-center font-medium">{order.amount === "Paid" ? <div className='w-full rounded-full text-center bg-[#07c50034]'><p className='text-[#07c500]'>Paid</p></div> : order.amount}</td>
-                                <td className="py-4 text-right font-medium">{order.balance}</td>
+                                <td className="py-4 text-right font-medium dark:text-white">{order.balance}</td>
                             </tr>
                             ))}
                         </tbody>
@@ -327,10 +326,10 @@ export const EcommerceDashboard = () => {
             </div>
 
             {/* Top Products */}
-            <div className="bg-white p-6 rounded-xl shadow-sm relative">
-                <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 cursor-pointer hover:scale-[1.1]"/>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm relative">
+                <EllipsisVertical size={16} className="absolute top-6 right-4 text-gray-800 dark:text-white cursor-pointer hover:scale-[1.1]"/>
                 <div className="flex justify-between items-center mb-6">
-                    <h3 className="font-semibold">Top Products</h3>
+                    <h3 className="font-semibold dark:text-white">Top Products</h3>
                 </div>
                 <div className="space-y-4">
                     {[
@@ -347,15 +346,15 @@ export const EcommerceDashboard = () => {
                             <div className={`w-10 h-10 rounded-lg flex justify-center items-center
                                 ${product.status === 'Up' 
                                 ? "bg-[#07c50045]" : product.status === 'Down' 
-                                ? "bg-[#f3341b45]" : "bg-gray-300" }`}>
+                                ? "bg-[#f3341b45]" : "bg-[#5d36e745]" }`}>
                                 <p className='font-bold'>{product.logo}</p>
                             </div>
                             <div>
-                                <p className="font-medium">{product.name}</p>
-                                <p className="text-gray-500 text-sm">{product.sales} sales</p>
+                                <p className="font-medium dark:text-white">{product.name}</p>
+                                <p className="text-gray-500 text-sm dark:text-white">{product.sales} sales</p>
                             </div>
                         </div>
-                        <p className="font-medium">{product.revenue}</p>
+                        <p className="font-medium dark:text-white">{product.revenue}</p>
                     </div>
                     ))}
                 </div>

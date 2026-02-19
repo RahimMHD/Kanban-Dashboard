@@ -78,14 +78,14 @@ const Sidebar: React.FC<ChildComponentProps> = ({ isExpand, isResize }) => {
                 transition={{duration: 0.2, ease: "easeInOut"}}
                 className={`
                     sidebar
-                    top-0 z-10 h-[100vh] font-semibold text-black pb-4 bg-white shadow-xl rounded-md overflow-y-scroll
+                    top-0 z-10 h-[100vh] font-semibold text-black pb-4 bg-white dark:text-white dark:bg-gray-800 shadow-xl rounded-md overflow-y-scroll
                     ${isResize ? "absolute left-[-250px]" : "sticky left-0"} 
                 `}
                     onMouseEnter={() => !isCheckedExpand && setIsExpanded(true)}
                     onMouseLeave={() => !isCheckedExpand && setIsExpanded(false)}
                     >
                 <div className={`
-                    mb-4 bg-[#ffffff] flex items-center sticky top-0 left-0
+                    mb-4 bg-[#ffffff] dark:bg-gray-800 flex items-center sticky top-0 left-0
                     ${isExpanded ? "p-4 justify-between": "p-2 justify-center"}
                 `}>
                     <div className={`flex ${isExpanded ? 'gap-2' : ''} items-center`}>

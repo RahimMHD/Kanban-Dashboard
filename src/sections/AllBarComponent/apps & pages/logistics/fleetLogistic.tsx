@@ -46,14 +46,14 @@ const FleetLogistics: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md max-w-6xl mx-auto">
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">MATERIO</h1>
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">MATERIO</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div className="md:col-span-1">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Apple & Pages</h2>
+          <h2 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">Apple & Pages</h2>
           <ul className="text-gray-600 space-y-2">
             {["eCommerce", "Academy", "Logistics", "Dashboard", "Fleet", "Email", 
               "Chat", "Calendar", "Kanban", "Invoice", "User", "Roles & Permissions", "Pages"]
@@ -64,14 +64,14 @@ const FleetLogistics: React.FC = () => {
         </div>
 
         <div className="md:col-span-2">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Fleet</h2>
+          <h2 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">Fleet</h2>
           <div className="space-y-6">
             {deliveries.map((delivery) => (
-              <div key={delivery.id} className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+              <div key={delivery.id} className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
                 <div className="flex justify-between items-start mb-2">
                   <div>
-                    <h3 className="font-semibold text-gray-800">{delivery.name}</h3>
-                    <p className="text-sm text-gray-500">{delivery.time}</p>
+                    <h3 className="font-semibold text-gray-800 dark:text-white">{delivery.name}</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-300">{delivery.time}</p>
                   </div>
                   <span className={`px-2 py-1 rounded text-xs font-medium ${
                     delivery.status === "ARRIVED" 
@@ -82,8 +82,8 @@ const FleetLogistics: React.FC = () => {
                   </span>
                 </div>
                 <div className="mt-2">
-                  <p className="text-sm font-medium text-gray-700">{delivery.trackingNumber}</p>
-                  <p className="text-sm text-gray-600">{delivery.location}</p>
+                  <p className="text-sm font-medium text-gray-700 dark:text-white">{delivery.trackingNumber}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{delivery.location}</p>
                 </div>
               </div>
             ))}
@@ -91,7 +91,7 @@ const FleetLogistics: React.FC = () => {
         </div>
 
         <div className="md:col-span-1">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Watermark</h2>
+          <h2 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">Watermark</h2>
           <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
             <h3 className="font-semibold text-gray-800 mb-3">Watermark</h3>
             <ul className="space-y-2">
@@ -105,7 +105,7 @@ const FleetLogistics: React.FC = () => {
         </div>
       </div>
 
-      <footer className="mt-12 pt-6 border-t border-gray-200 text-center text-gray-500">
+      <footer className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700 text-center text-gray-500 dark:text-gray-300">
         <p>© 2025, Made with by ThemeSelection</p>
       </footer>
     </div>

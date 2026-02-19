@@ -18,8 +18,8 @@ const AddProductPage = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-semibold">Add a new product</h1>
-          <p className="text-gray-500">Orders placed across your store</p>
+          <h1 className="text-2xl font-semibold dark:text-white">Add a new product</h1>
+          <p className="text-gray-500 dark:text-gray-300">Orders placed across your store</p>
         </div>
       </div>
 
@@ -27,24 +27,24 @@ const AddProductPage = () => {
         {/* Left Column - Product Information */}
         <div className="lg:col-span-2 space-y-6">
           {/* Product Information */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h2 className="font-semibold mb-4">Product Information</h2>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h2 className="font-semibold mb-4 dark:text-white">Product Information</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Product Name</label>
-                <input type="text" className="bg-[#eee] w-full p-2 border rounded-lg" />
+                <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Product Name</label>
+                <input type="text" className="bg-[#eee] w-full p-2 border rounded-lg dark:text-white" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">SKU</label>
-                <input type="text" className="bg-[#eee] w-full p-2 border rounded-lg" />
+                <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">SKU</label>
+                <input type="text" className="bg-[#eee] w-full p-2 border rounded-lg dark:text-white" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Barcode</label>
-                <input type="text" className="bg-[#eee] w-full p-2 border rounded-lg" />
+                <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Barcode</label>
+                <input type="text" className="bg-[#eee] w-full p-2 border rounded-lg dark:text-white" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Description (Optional)</label>
-                <textarea className="w-full p-2 bg-[#eee] border rounded-lg h-20" />
+                <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">Description (Optional)</label>
+                <textarea className="w-full p-2 bg-[#eee] border rounded-lg h-20 dark:text-white" />
               </div>
               <div className="flex space-x-2">
                 {['B', 'U', 'T', 'E', 'F', 'G', 'H', 'I', 'J'].map((btn) => (
@@ -58,8 +58,8 @@ const AddProductPage = () => {
           </div>
 
           {/* Product Image */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h2 className="font-semibold mb-4">Product Image</h2>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h2 className="font-semibold mb-4 dark:text-white">Product Image</h2>
             <div className="space-y-4">
               <div className="flex space-x-4">
                 <button 
@@ -77,25 +77,25 @@ const AddProductPage = () => {
               </div>
               
               {mediaType === 'upload' ? (
-                <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+                <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center">
                   <Upload className="mx-auto text-gray-400 mb-2" />
-                  <p className="text-gray-500">Drag and Drop Your Image Here.</p>
+                  <p className="text-gray-500 dark:text-gray-300">Drag and Drop Your Image Here.</p>
                   <p className="text-gray-500">or</p>
                   <button className="text-primary font-medium">Browse image</button>
                 </div>
               ) : (
-                <input type="url" placeholder="Enter image URL" className="w-full p-2 border rounded-lg" />
+                <input type="url" placeholder="Enter image URL" className="w-full p-2 border rounded-lg dark:text-white" />
               )}
             </div>
           </div>
 
           {/* Product Variants */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h2 className="font-semibold mb-4">Product Variants</h2>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h2 className="font-semibold mb-4 dark:text-white">Product Variants</h2>
             <div className="space-y-4">
               {variants.map((variant) => (
                 <div key={variant.id} className="flex space-x-4 items-start">
-                  <select className="flex-1 p-2 bg-[#eee] border rounded-lg">
+                  <select className="flex-1 p-2 bg-[#eee] border rounded-lg dark:text-white">
                     <option>Select Variant</option>
                     <option>Size</option>
                     <option>Color</option>
@@ -104,7 +104,7 @@ const AddProductPage = () => {
                   <input 
                     type="text" 
                     placeholder="Variant Value" 
-                    className="flex-1 p-2 border bg-[#eee] rounded-lg" 
+                    className="flex-1 p-2 border bg-[#eee] rounded-lg dark:text-white" 
                   />
                   <button 
                     onClick={() => removeVariant(variant.id)}
@@ -128,8 +128,8 @@ const AddProductPage = () => {
         {/* Right Column - Sidebar */}
         <div className="space-y-6">
           {/* Inventory */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h2 className="font-semibold mb-4">Inventory</h2>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h2 className="font-semibold mb-4 dark:text-white">Inventory</h2>
             <div className="space-y-3">
               <button className="w-full text-left p-2 bg-gray-100 rounded-lg">+ Restock</button>
               <button className="w-full text-left p-2 bg-gray-100 rounded-lg">Shipping</button>
@@ -140,8 +140,8 @@ const AddProductPage = () => {
           </div>
 
           {/* Options */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h2 className="font-semibold mb-4">Options</h2>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h2 className="font-semibold mb-4 dark:text-white">Options</h2>
             <div className="space-y-3">
               <button className="w-full text-left p-2 bg-primary text-white rounded-lg">Add to stock</button>
               <div className="text-sm">
@@ -154,45 +154,45 @@ const AddProductPage = () => {
           </div>
 
           {/* Pricing */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h2 className="font-semibold mb-4">Pricing</h2>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h2 className="font-semibold mb-4 dark:text-white">Pricing</h2>
             <div className="space-y-3">
               <div>
-                <label className="block text-sm text-gray-700 mb-1">Base Price</label>
-                <input type="number" className="bg-[#eee] w-full p-2 border rounded-lg" />
+                <label className="block text-sm text-gray-700 dark:text-white mb-1">Base Price</label>
+                <input type="number" className="bg-[#eee] w-full p-2 border rounded-lg dark:text-white" />
               </div>
               <div>
-                <label className="block text-sm text-gray-700 mb-1">Discounted Price</label>
-                <input type="number" className="bg-[#eee] w-full p-2 border rounded-lg" />
+                <label className="block text-sm text-gray-700 dark:text-white mb-1">Discounted Price</label>
+                <input type="number" className="bg-[#eee] w-full p-2 border rounded-lg dark:text-white" />
               </div>
               <label className="flex items-center">
                 <input type="checkbox" className="mr-2" />
-                <span className="text-sm">Charge tax on this product</span>
+                <span className="text-sm dark:text-white">Charge tax on this product</span>
               </label>
               <label className="flex items-center">
                 <input type="checkbox" className="mr-2" defaultChecked />
-                <span className="text-sm">In stock</span>
+                <span className="text-sm dark:text-white">In stock</span>
               </label>
             </div>
           </div>
 
           {/* Organize */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h2 className="font-semibold mb-4">Organize</h2>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <h2 className="font-semibold mb-4 dark:text-white">Organize</h2>
             <div className="space-y-3">
-              <select className="w-full p-2 bg-[#eee] border rounded-lg">
+              <select className="w-full p-2 bg-[#eee] border rounded-lg dark:text-white">
                 <option>Select Vendor</option>
               </select>
-              <select className="w-full p-2 bg-[#eee] border rounded-lg">
+              <select className="w-full p-2 bg-[#eee] border rounded-lg dark:text-white">
                 <option>Select Category</option>
               </select>
-              <select className="w-full p-2 bg-[#eee] border rounded-lg">
+              <select className="w-full p-2 bg-[#eee] border rounded-lg dark:text-white">
                 <option>Select Collection</option>
               </select>
-              <select className="w-full p-2 bg-[#eee] border rounded-lg">
+              <select className="w-full p-2 bg-[#eee] border rounded-lg dark:text-white">
                 <option>Select Status</option>
               </select>
-              <input type="text" placeholder="Enter Tags" className="w-full p-2 border rounded-lg" />
+              <input type="text" placeholder="Enter Tags" className="w-full p-2 border rounded-lg dark:text-white" />
             </div>
           </div>
         </div>

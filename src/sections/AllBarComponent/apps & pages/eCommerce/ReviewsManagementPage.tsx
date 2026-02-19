@@ -104,11 +104,11 @@ const ReviewsManagementPage = () => {
   };
 
   return (
-    <div className="p-6 space-y-6 bg-gray-50">
+    <div className="p-6 space-y-6 bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-semibold">MATERIO</h1>
+          <h1 className="text-2xl font-semibold dark:text-white">MATERIO</h1>
           <div className="relative mt-2">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
             <input 
@@ -121,14 +121,14 @@ const ReviewsManagementPage = () => {
       </div>
 
       {/* Stats Header */}
-      <div className="bg-white p-6 rounded-xl shadow-sm">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
         <div className="flex justify-between items-center">
           <div>
             <div className="flex items-center">
-              <span className="text-3xl font-bold">4.89</span>
+              <span className="text-3xl font-bold dark:text-white">4.89</span>
               <Star className="text-yellow-400 ml-2" size={20} />
             </div>
-            <p className="text-gray-500">Total 187 reviews</p>
+            <p className="text-gray-500 dark:text-gray-300">Total 187 reviews</p>
             <p className="text-sm text-gray-500">All reviews are from genuine customers</p>
             <p className="text-green-600 text-sm mt-1">+5 This week</p>
           </div>
@@ -147,7 +147,7 @@ const ReviewsManagementPage = () => {
         {/* Main Content */}
         <div className="lg:col-span-3 space-y-6">
           {/* Reviews Table */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
             <div className="flex justify-between items-center mb-6">
               <h2 className="font-semibold">Reviews</h2>
               <div className="flex items-center space-x-4">
@@ -165,8 +165,8 @@ const ReviewsManagementPage = () => {
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="text-left text-gray-500 border-b">
-                    <th className="pb-3 font-medium">PRODUCT</th>
+                  <tr className="text-left text-gray-500 dark:text-gray-300 border-b">
+                    <th className="pb-3 font-medium dark:text-white">PRODUCT</th>
                     <th className="pb-3 font-medium">REVIEWER</th>
                     <th className="pb-3 font-medium">REVIEW</th>
                     <th className="pb-3 font-medium">DATE</th>
@@ -177,8 +177,8 @@ const ReviewsManagementPage = () => {
                   {reviews.map((review, index) => (
                     <tr key={index} className="border-b last:border-0 hover:bg-gray-50">
                       <td className="py-4">
-                        <div className="font-medium">{review.product}</div>
-                        <div className="text-sm text-gray-500">{review.description}</div>
+                        <div className="font-medium dark:text-white">{review.product}</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-300">{review.description}</div>
                       </td>
                       <td className="py-4">
                         <div className="font-medium">{review.reviewer}</div>
@@ -209,7 +209,7 @@ const ReviewsManagementPage = () => {
         {/* Sidebar */}
         <div className="space-y-6">
           {/* Reviews Statistics */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
             <h3 className="font-semibold mb-4">Reviews statistics</h3>
             <div className="text-center mb-4">
               <div className="text-2xl font-bold text-primary">12</div>
@@ -223,7 +223,7 @@ const ReviewsManagementPage = () => {
           </div>
 
           {/* Buy Now Card */}
-          <div className="bg-white p-6 rounded-xl shadow-sm">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
             <button className="w-full bg-primary text-white py-2 rounded-lg">
               Buy Now
             </button>
