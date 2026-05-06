@@ -28,7 +28,7 @@ const NavBar: React.FC<ChildComponentProps> = ({isExpand, isResize}) => {
         <AnimatePresence>
             <motion.header    
                 transition={{duration: 0.2, ease: "easeInOut"}}
-                className={`navbar ${isScrolling ? 'sticky bg-white dark:bg-gray-800 top-0 right-0 px-8 z-20' : ""}
+                className={`navbar ${isScrolling ? 'sticky bg-white dark:bg-gray-300 top-0 right-0 px-8 z-20' : ""}
                     mb-4 dark:bg-gray-800 h-12 p-4 flex justify-between items-center transition-all duration-200
                 `}
             >
