@@ -28,21 +28,21 @@ const SidebarItem = React.memo(({ item, path, activePath, depth = 0, setActivePa
     };
 
     return (
-        <div>
+        <div className="">
             <button
                 onClick={handleClick}
                 className={`
-                    flex items-center w-full p-2 cursor-pointer  ${isExpanded ? "rounded-r-xl justify-between" : "rounded-xl justify-center"}
+                    flex items-center w-full p-2 cursor-pointer  ${isExpanded ? "rounded-r-3xl justify-between" : "rounded-xl justify-center"}
                     ${isOpen && hasChildren ? "bg-gray-300 text-black dark:bg-gray-500 dark:text-white" : ""}
                     ${isActiveLeaf
                         ? hasChildren
                             ? "bg-gray-300 text-black"
                             : "bg-[#42B1FB] text-white"
-                        : "hover:bg-gray-200 hover:text-black"
+                        : "hover:bg-gray-300 hover:text-black"
                     }
                     ${item.disabled ? "opacity-50 cursor-not-allowed" : ""}
                 `}
-                style={{ paddingLeft: `${8 + depth * 16}px` }}
+                style={{ paddingLeft: `${12 + depth * 16}px` }}
                 disabled={item.disabled}
             >
                 <div className="flex items-center gap-2">

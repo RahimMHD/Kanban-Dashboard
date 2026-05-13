@@ -78,14 +78,14 @@ const Sidebar: React.FC<ChildComponentProps> = ({ isExpand, isResize }) => {
                 transition={{duration: 0.2, ease: "easeInOut"}}
                 className={`
                     sidebar
-                    top-0 z-10 h-[100vh] font-semibold text-black pb-4 bg-white dark:text-white dark:bg-gray-800 shadow-xl rounded-md overflow-y-scroll
+                    top-0 z-10 h-[100vh] font-semibold text-black pb-4 bg-[f3f4f6f2] dark:text-white dark:bg-black rounded-md overflow-y-scroll
                     ${isResize ? "absolute left-[-250px]" : "sticky left-0"} 
                 `}
                     onMouseEnter={() => !isCheckedExpand && setIsExpanded(true)}
                     onMouseLeave={() => !isCheckedExpand && setIsExpanded(false)}
                     >
                 <div className={`
-                    mb-4 bg-[#ffffff] dark:bg-gray-800 flex items-center sticky top-0 left-0
+                    mb-4 bg-[f3f4f6f2] dark:bg-black flex items-center sticky top-0 left-0
                     ${isExpanded ? "p-4 justify-between": "p-2 justify-center"}
                 `}>
                     <div className={`flex ${isExpanded ? 'gap-2' : ''} items-center`}>
@@ -106,7 +106,7 @@ const Sidebar: React.FC<ChildComponentProps> = ({ isExpand, isResize }) => {
                     }
                 </div>
 
-                <nav className={`h-[100%] pt-0 ${isExpanded ? "p-4" : "p-2"} space-y-1 transition-[max-height] duration-300 `}>
+                <nav className={`h-[100%] pt-0 ${isExpanded ? "py-4" : "py-2"} space-y-1 transition-[max-height] duration-300 `}>
                     {sections.map((item) => (
                         <SidebarItem
                             key={item.name}
