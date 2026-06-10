@@ -54,6 +54,20 @@ export const sections: SidebarItem[] = [
         ["Landing", "Pricing", "Payment", "Checkout", "Help Center"],
     )
 },
+
+{
+    name: "ERP",
+    icon: ShoppingBag,
+    children:  normalizeTree(
+        [
+            "Dashboard",
+            { name: "Customers", children: [ "Add","List", "Category"] },
+            { name: "Suppliers", children: ["List", "Details"] },
+            { name: "Pos", children: ["List", "Details"] },
+            "ProductList", "Manage", "Repairs", "Purchases", "Reports", "Stock", "Settings", "Expenses"
+        ],
+    )
+}, 
 {
     name: "ECommerce",
     icon: ShoppingBag,
