@@ -1,8 +1,11 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { AlignJustify, Bell, Languages, LaptopMinimal, Search, StarsIcon } from 'lucide-react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SystemDarkMode from './systemDarkMode';
+
+// ─── Types ────────────────────────────────────────────────────────────────────
+type Theme = "light" | "dark";
 
 interface ChildComponentProps {
     isExpand: boolean; // Define the type of the callback prop
@@ -14,6 +17,7 @@ const NavBar: React.FC<ChildComponentProps> = ({isExpand, isResize}) => {
     const [isSystemDarkActive, setIsSystemDarkActive] = useState<boolean>(false)
     const [isScrolling, setIsScrolling] = useState<boolean>(false)
     const [isShowHide, setIsShowHide] = useState<boolean>(isResize)
+    const [theme, setTheme] = useState<Theme>("light");
     
     window.addEventListener("scroll", () => {
         // console.log(window.scrollY);
@@ -23,6 +27,13 @@ const NavBar: React.FC<ChildComponentProps> = ({isExpand, isResize}) => {
             setIsScrolling(false);
         }
     })
+
+     // Apply theme
+    useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "dark") root.classList.add("dark");
+    else root.classList.remove("dark");
+    }, [theme]);
 
     return (
         <AnimatePresence>
@@ -52,12 +63,19 @@ const NavBar: React.FC<ChildComponentProps> = ({isExpand, isResize}) => {
                 <div className='flex items-center gap-6'>
                     <Languages size={22}  className='dark:text-white cursor-pointer transition-all duration-200 scale-100 hover:scale-150 hover:text-blue-400'/>
                     <div className='relative transition-all duration-200'>
-                        <LaptopMinimal size={22}  
+                        {/* <LaptopMinimal size={22}  
                             onClick={ () => setIsSystemDarkActive(!isSystemDarkActive)}
                             className='dark:text-white relative cursor-pointer transition-all duration-200 scale-100 hover:scale-150 hover:text-blue-400'
                         >
-                        </LaptopMinimal>
-                        {isSystemDarkActive && <SystemDarkMode />}
+                        </LaptopMinimal> */}
+                        <button
+                            onClick={() => setTheme((t: any) => t === "light" ? "dark" : "light")}
+                            title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+                            className="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-600 flex items-center justify-center text-base hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                        >
+                            {theme === "light" ? "🌙" : "☀️"}
+                        </button>
+                        {/* {isSystemDarkActive && <SystemDarkMode />} */}
                     </div>
                     <StarsIcon
                         size={22} 

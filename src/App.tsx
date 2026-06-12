@@ -31,7 +31,7 @@ import InvoiceAdd from './sections/AllBarComponent/apps & pages/invoice/invoiceA
 import InvoiceEdit from './sections/AllBarComponent/apps & pages/invoice/invoiceEdit';
 import InvoicePreview from './sections/AllBarComponent/apps & pages/invoice/invoicePreview';
 import DashboardERP from './sections/AllBarComponent/apps & pages/ERP/dashboardERP';
-import ProductList from './sections/AllBarComponent/apps & pages/ERP/ProductList';
+import ProductList from './sections/AllBarComponent/apps & pages/ERP/productList';
 
 
 const App: React.FC = () => {
