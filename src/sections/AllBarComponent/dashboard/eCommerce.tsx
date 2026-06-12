@@ -162,7 +162,7 @@ export const EcommerceDashboard = () => {
                         { icon: <CreditCard size={21} className="text-[#0A6CD5] font-bold" />,bg: "bg-[#0A6CD565]", title: "MasterCard", description: "Received Money", amount: "+$15.320", change: <ChevronUp size={18} className='text-[#0A6CD5]' /> },
                         { icon: <TrendingUp size={21} className="text-[#f3341b] font-bold" />,bg: "bg-[#f3341b65]", title: "Transfer", description: "Sent Money", amount: "-$8.450", change: <ChevronDown size={18} className='text-[#f3341b]' /> }
                     ].map((transaction, index) => (
-                        <div className='flex items-center justify-between mt-4'>
+                        <div key={index} className='flex items-center justify-between mt-4'>
                             <div className='flex items-center gap-3'>
                                 <div className={`w-10 h-10 ${transaction.bg} rounded-lg flex justify-center items-center`}>
                                     {transaction.icon}
@@ -312,8 +312,8 @@ export const EcommerceDashboard = () => {
                                         <img src={order.img} alt="client User" />
                                     </div>
                                     <div className='flex flex-col'>
-                                        <td className="text-lg font-semibold dark:text-white">{order.date}</td>
-                                        <td className='text-gray-500 font-semibold dark:text-white'>{order.email}</td>
+                                        <p className="text-lg font-semibold dark:text-white">{order.date}</p>
+                                        <p className='text-gray-500 font-semibold dark:text-white'>{order.email}</p>
                                     </div>
                                 </td>
                                 <td className="py-4 text-center font-medium">{order.amount === "Paid" ? <div className='w-full rounded-full text-center bg-[#07c50034]'><p className='text-[#07c500]'>Paid</p></div> : order.amount}</td>

@@ -56,19 +56,6 @@ export const sections: SidebarItem[] = [
 },
 
 {
-    name: "ERP",
-    icon: ShoppingBag,
-    children:  normalizeTree(
-        [
-            "Dashboard",
-            { name: "Customers", children: [ "Add","List", "Category"] },
-            { name: "Suppliers", children: ["List", "Details"] },
-            { name: "Pos", children: ["List", "Details"] },
-            "ProductList", "Manage", "Repairs", "Purchases", "Reports", "Stock", "Settings", "Expenses"
-        ],
-    )
-}, 
-{
     name: "ECommerce",
     icon: ShoppingBag,
     children:  normalizeTree(
@@ -81,6 +68,19 @@ export const sections: SidebarItem[] = [
         ],
     )
 },
+{
+    name: "ERP",
+    icon: ShoppingBag,
+    children:  normalizeTree(
+        [
+            "Dashboard",
+            { name: "Customers", children: [ "Add","List", "Category"] },
+            { name: "Suppliers", children: ["List", "Details"] },
+            { name: "Pos", children: ["List", "Details"] },
+            "ProductList", "Manage", "Repairs", "Purchases", "Reports", "Stock", "Settings", "Expenses"
+        ],
+    )
+}, 
 {
     name: "Academy",
     icon: GraduationCap,

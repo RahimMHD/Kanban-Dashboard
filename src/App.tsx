@@ -30,6 +30,8 @@ import InvoiceList from './sections/AllBarComponent/apps & pages/invoice/invoice
 import InvoiceAdd from './sections/AllBarComponent/apps & pages/invoice/invoiceAdd';
 import InvoiceEdit from './sections/AllBarComponent/apps & pages/invoice/invoiceEdit';
 import InvoicePreview from './sections/AllBarComponent/apps & pages/invoice/invoicePreview';
+import DashboardERP from './sections/AllBarComponent/apps & pages/ERP/dashboardERP';
+import ProductList from './sections/AllBarComponent/apps & pages/ERP/ProductList';
 
 
 const App: React.FC = () => {
@@ -92,6 +94,11 @@ const App: React.FC = () => {
             <Route path="ecommerce/orders/details" element={<OrderDetailsPage />} />            
             <Route path="ecommerce/customers/list" element={<CustomersListPage />} />
             <Route path="ecommerce/customers/details" element={<CustomerDetailsPage />} />
+
+            {/* ERP sections */}
+            <Route path="erp/dashboard" element={<DashboardERP />} />
+            <Route path="erp/productlist" element={<ProductList />} />
+
 
             {/* academy sections  */}
             <Route path='academy/dashboard' element={<AcademyDashboard />} />
