@@ -4,7 +4,7 @@ import {
   PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid,
   Tooltip, ResponsiveContainer, Legend,
 } from "recharts";
-import theme  from "../../nav-bar/navBar"
+import type { Theme } from "../../../../separeteComponent/darkmode";
 
 interface Notification {
   id: number;
@@ -258,8 +258,8 @@ function StatCard({ label, value, change, up, accent, icon }: {
 }
 
 // ─── Main Dashboard ───────────────────────────────────────────────────────────
-export default function Dashboard() {
-  // const [theme, setTheme] = useState<Theme>("light");
+export default function Dashboard(theme: Theme) {
+  // const [theme, setTheme] = useState<Theme>(Theme);
   const [dateRange] = useState("06/06/2026 – 06/12/2026");
   const [showNotif, setShowNotif] = useState(false);
   const [showAddOrder, setShowAddOrder] = useState(false);

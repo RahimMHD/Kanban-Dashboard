@@ -1,7 +1,6 @@
-
-import './App.css'
+import './App.css';
 import { useEffect, useState } from 'react';
-import SideBar from './sections/AllBarComponent/sidebaFile/sidebar'
+import SideBar from './sections/AllBarComponent/sidebaFile/sidebar';
 import NavBar from './sections/AllBarComponent/nav-bar/navBar';
 import SearchBar from './sections/AllBarComponent/nav-bar/searchBar';
 import { motion } from 'framer-motion';
@@ -15,7 +14,6 @@ import CategoryPage from './sections/AllBarComponent/apps & pages/eCommerce/prod
 import AddProductPage from './sections/AllBarComponent/apps & pages/eCommerce/products/add';
 import ProductsListPage from './sections/AllBarComponent/apps & pages/eCommerce/products/list';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import EcommerceSections from './sections/AllBarComponent/apps & pages/eCommerce/ecommerceSections';
 import OrdersListPage from './sections/AllBarComponent/apps & pages/eCommerce/orders/listOrders';
 import OrderDetailsPage from './sections/AllBarComponent/apps & pages/eCommerce/orders/detailsOrders';
 import CustomersListPage from './sections/AllBarComponent/apps & pages/eCommerce/customers/CustomersListPage';
@@ -33,55 +31,64 @@ import InvoicePreview from './sections/AllBarComponent/apps & pages/invoice/invo
 import DashboardERP from './sections/AllBarComponent/apps & pages/ERP/dashboardERP';
 import ProductList from './sections/AllBarComponent/apps & pages/ERP/productList';
 
+// ─── Global Type Definition ──────────────────────────────────────────────────
+type Theme = "light" | "dark";
 
 const App: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState<boolean>(true);
   const [isResizing, setIsResizing] = useState<boolean>(false);
+  
+  // FIX 1: Correct state typing using the Theme union type and initialized with localstorage fallback
+  const [theme, setTheme] = useState<Theme>(
+    () => (localStorage.getItem('theme') as Theme) || "light"
+  );
 
-
+  // FIX 2: Safely combine window loading and resizing event handling inside one useEffect with cleanup
   useEffect(() => {
-    window.innerWidth >= 1212 ? setIsResizing(false) : setIsResizing(true); 
-  }, [])
+    const handleResize = () => {
+      if (window.innerWidth >= 1212) {
+        setIsResizing(false);
+      } else {
+        setIsResizing(true);
+      }
+    };
 
-  const handleExpandedFromChild = (data: boolean) => setIsExpanded(data)
+    // Run initial assessment on mount
+    handleResize();
 
-  // Check if she is resizing to change sidebar position
-    window.addEventListener("resize", () => {
-        // console.log(window.innerWidth)
-        window.innerWidth >= 1212 
-          ? setIsResizing(false)
-          : setIsResizing(true);
-    })
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleExpandedFromChild = (data: boolean) => setIsExpanded(data);
 
   return (
     <BrowserRouter>
-      <div className={`app w-[100%] bg-[f3f4f6f2] dark:bg-black ${isResizing ? "px-4" : "flex gap-5"} `}>
+      <div className={`app w-[100%] bg-[#f3f4f6f2] dark:bg-black ${isResizing ? "px-4" : "flex gap-5"}`}>
         <SideBar 
           isExpand={handleExpandedFromChild}
           isResize={isResizing}
         />
 
         <motion.div
-                  animate={{
-                    width: isResizing ? "100%" : isExpanded ? "81.6%" : "92%", 
-                    justifyContent: isResizing ? "center" : ""
-                  }}
-                  transition={{duration: 0.2, ease: "easeInOut"}}
-                  className={`flex flex-col relative`}
+          animate={{
+            width: isResizing ? "100%" : isExpanded ? "81.6%" : "92%", 
+            justifyContent: isResizing ? "center" : ""
+          }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+          className="flex flex-col relative"
         >
-          <NavBar isExpand={isExpanded} isResize={isResizing} />
+          {/* This securely streams down the variables expected by the child component */}
+          <NavBar theme={theme} setTheme={setTheme} isExpand={isExpanded} isResize={isResizing} />
           <SearchBar />
+          
           <Routes>
-            {/* dashboard sections  */}
+            {/* Dashboard sections */}
             <Route index element={<Crm />} />
             <Route path='dashboards/logistics' element={<LogisticsDashboard />} />
             <Route path='dashboards/academy' element={<AcademyDashboard />} />
             <Route path='dashboards/ecommerce' element={<EcommerceDashboard />} />
             <Route path='dashboards/analytics' element={<Analytics />} />
-
-            {/* <Route path='/category' element={<CategoryPage />} />
-            <Route path='/add-product' element={<AddProductPage />} />
-            <Route path='/products-list' element={<ProductsListPage />} /> */}
 
             <Route path="ecommerce/dashboard" element={<EcommerceDashboard />} />
             <Route path="ecommerce/managereviews" element={<ReviewsManagementPage />} />
@@ -96,32 +103,30 @@ const App: React.FC = () => {
             <Route path="ecommerce/customers/details" element={<CustomerDetailsPage />} />
 
             {/* ERP sections */}
-            <Route path="erp/dashboard" element={<DashboardERP />} />
-            <Route path="erp/productlist" element={<ProductList />} />
+            <Route path="erp/dashboard" element={<DashboardERP theme={theme} />} />
+            <Route path="erp/productlist" element={<ProductList theme={theme} />} />
 
-
-            {/* academy sections  */}
+            {/* Academy sections */}
             <Route path='academy/dashboard' element={<AcademyDashboard />} />
             <Route path='academy/mycourses' element={<AcademyCourses />} />
             <Route path='academy/coursedetails' element={<CourseDetails />} />
 
-            {/* logistics sections  */}
+            {/* Logistics sections */}
             <Route path='logistics/dashboard' element={<LogisticsDashboard />} />
             <Route path='logistics/fleet' element={<FleetLogistics />} />
             
-            {/* logistics sections  */}
+            {/* Invoice sections */}
             <Route path='invoice/list' element={<InvoiceList />} />
             <Route path='invoice/add' element={<InvoiceAdd />} />
             <Route path='invoice/edit' element={<InvoiceEdit />} />
             <Route path='invoice/preview' element={<InvoicePreview />} />
-
           </Routes>
+          
           <Footer />
         </motion.div>
-      
       </div>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;

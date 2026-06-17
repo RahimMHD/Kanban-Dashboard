@@ -1,4 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useRef, type JSX } from "react";
+import type { Theme } from "../../../../separeteComponent/darkmode";
+
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Product {
@@ -417,7 +419,7 @@ function Dropdown({
 }
 
 // ─── Main Component ───────────────────────────────────────────────────────────
-export default function ProductList() {
+export default function ProductList(theme: Theme) : JSX.Element {
   const [products, setProducts] = useState<Product[]>(SEED);
   const [search, setSearch]     = useState("");
   const [catFilter, setCatFilter] = useState("");
