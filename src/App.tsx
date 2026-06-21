@@ -16,7 +16,7 @@ import ProductsListPage from './sections/AllBarComponent/apps & pages/eCommerce/
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import OrdersListPage from './sections/AllBarComponent/apps & pages/eCommerce/orders/listOrders';
 import OrderDetailsPage from './sections/AllBarComponent/apps & pages/eCommerce/orders/detailsOrders';
-import CustomersListPage from './sections/AllBarComponent/apps & pages/eCommerce/customers/CustomersListPage';
+import Customers from './sections/AllBarComponent/apps & pages/ERP/customers';
 import CustomerDetailsPage from './sections/AllBarComponent/apps & pages/eCommerce/customers/CustomerDetailsPage';
 import ReviewsManagementPage from './sections/AllBarComponent/apps & pages/eCommerce/ReviewsManagementPage';
 import Referrals from './sections/AllBarComponent/apps & pages/eCommerce/referralsPage';
@@ -30,6 +30,7 @@ import InvoiceEdit from './sections/AllBarComponent/apps & pages/invoice/invoice
 import InvoicePreview from './sections/AllBarComponent/apps & pages/invoice/invoicePreview';
 import DashboardERP from './sections/AllBarComponent/apps & pages/ERP/dashboardERP';
 import ProductList from './sections/AllBarComponent/apps & pages/ERP/productList';
+import CustomersListPage from './sections/AllBarComponent/apps & pages/eCommerce/customers/CustomersListPage';
 
 // ─── Global Type Definition ──────────────────────────────────────────────────
 type Theme = "light" | "dark";
@@ -105,6 +106,7 @@ const App: React.FC = () => {
             {/* ERP sections */}
             <Route path="erp/dashboard" element={<DashboardERP theme={theme} />} />
             <Route path="erp/productlist" element={<ProductList theme={theme} />} />
+            <Route path="erp/customers" element={<Customers theme={theme} />} />
 
             {/* Academy sections */}
             <Route path='academy/dashboard' element={<AcademyDashboard />} />
